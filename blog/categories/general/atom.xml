@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: General | Decodize]]></title>
+  <link href="http://praveenvijayan.github.io/blog/categories/general/atom.xml" rel="self"/>
+  <link href="http://praveenvijayan.github.io/"/>
+  <updated>2015-01-09T23:32:21+05:30</updated>
+  <id>http://praveenvijayan.github.io/</id>
+  <author>
+    <name><![CDATA[Praveen Vijayan]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Adding Roboto Font in Windows Desktop]]></title>
+    <link href="http://praveenvijayan.github.io/blog/2012/03/12/adding-roboto-font-in-windows-desktop/"/>
+    <updated>2012-03-12T22:35:00+05:30</updated>
+    <id>http://praveenvijayan.github.io/blog/2012/03/12/adding-roboto-font-in-windows-desktop</id>
+    <content type="html"><![CDATA[<p><img src="//lh4.googleusercontent.com/-bpwEONwjg0U/UNneJ8jfmvI/AAAAAAAAE_M/2kOzXagRlM0/s512/roboto-font.jpg" title="Installing Roboto Font" alt="Roboto font" /></p>
+
+<p>in this post I’ll show you how to replace system fonts in windows with Roboto. Roboto is crafted for requirements of UI &amp; high-resolution screens.</p>
+
+<p><img src="//lh3.googleusercontent.com/-zNVgTJktFEg/UNneMBnZJlI/AAAAAAAAE_s/i1XrBRw1V8c/s416/roboto.jpg" title="Roboto font" alt="Roboto Font" /></p>
+
+<!-- more -->
+
+
+<h3>Steps</h3>
+
+<ol>
+<li><p>Download the font from google android design center <a href="//developer.android.com/design/style/typography.html#actionbar">Robot font</a>.</p></li>
+<li><p>Install the font</p></li>
+</ol>
+
+
+<p><img src="//lh3.googleusercontent.com/-JonsWStTtOs/UNneKImta4I/AAAAAAAAE_Q/Pr2F7t_tKh0/s724/roboto-font-install.jpg" alt="Roboto font" /></p>
+
+<ol>
+<li>Right click desktop &amp; select personalize</li>
+</ol>
+
+
+<p><img src="//lh3.googleusercontent.com/-nLkkhUixUhw/UNnfqmzvTZI/AAAAAAAAFAc/zOcJLixDbOU/s416/roboto-personalize.jpg" title="Windows right click personalize" alt="Windows right click personalize" /></p>
+
+<ol>
+<li>Select window color</li>
+</ol>
+
+
+<p><img src="//lh6.googleusercontent.com/-iWpfdBu5Jbo/UNneLB2UqOI/AAAAAAAAE_Y/7xc-LcFBCkE/s640/roboto-personalize-windowColor.jpg" title="Window color" alt="Window color" /></p>
+
+<ol>
+<li>Select advanced appearance settings</li>
+</ol>
+
+
+<p><img src="//lh3.googleusercontent.com/-9icL7TPXaZA/UNneL8w2bGI/AAAAAAAAE_g/Hw0k_-m2o8Q/s640/roboto-window-color-appearancejpg.jpg" title="Advanced settings" alt="Advanced settings" /></p>
+
+<ol>
+<li>Select Item drop down &amp; Change font to Roboto for the following.</li>
+</ol>
+
+
+<p><img src="//lh5.googleusercontent.com/-LcI_nuFselo/UNneKrLd-NI/AAAAAAAAE_U/rbFYufcihdI/s505/roboto-color-appearance.jpg" title="Select Item drop down" alt="Select Item drop down" /></p>
+
+<ol>
+<li>To change windows system font – type regedit on windows run. Goto HKEY_LOCAL_MACHINE > Software > Microsoft > Windows NT > CurrentVersion > FontSubstitutes</li>
+</ol>
+
+
+<p><img src="//lh3.googleusercontent.com/-XP6bCEbSSX4/UNneMBA951I/AAAAAAAAE_w/WyHB4nR7ifU/s720/roboto-regedit.jpg" title="Windows registry FontSubstitutes" alt="Windows registry FontSubstitutes" /></p>
+
+<ol>
+<li>Restart</li>
+</ol>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Hello World!!!]]></title>
+    <link href="http://praveenvijayan.github.io/blog/2012/01/01/hello-worldclear/"/>
+    <updated>2012-01-01T19:01:00+05:30</updated>
+    <id>http://praveenvijayan.github.io/blog/2012/01/01/hello-worldclear</id>
+    <content type="html"><![CDATA[<p>After a long time I’m again starting my blog. This theme is Splendio 1.1 developed by DesignDisease (Elena &amp; Vlad Scanteie). I have customized it a bit. To know about me check <a href="/about" title="About me">here</a>.</p>
+]]></content>
+  </entry>
+  
+</feed>

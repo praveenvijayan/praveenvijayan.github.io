@@ -1,0 +1,412 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>JavaScript Memoization – Caching Results for Better Performance. - Decodize</title>
+  <meta name="author" content="Praveen Vijayan">
+
+  
+  <meta name="description" content="Introduction Memoization is a technique used to cache result of a previously calculated value thus can avoid the need to recalculate. Simplest &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://praveenvijayan.github.io/blog/2012/08/27/javascript-memoization-caching-results-for-better-performance">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Decodize" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="/javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Decodize</a></h1>
+  
+    <h2>console.log</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="rss" title="subscribe via RSS">RSS</a></li>
+  <li><a href="http://twitter.com/praveen_vijaya" rel="twitter" title="Twitter @praveen_vijaya">Twitter</a></li>
+  <li><a href="https://github.com/praveenvijayan" rel="github" title="Github">Github</a></li>
+  <li><a href="https://facebook.com/praveen.vijayan0" rel="facebook" title="Facebook">Facebook</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="sitesearch" value="praveenvijayan.github.io">
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/about">About</a></li>
+  <li><a href="/projects">Projects</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">JavaScript Memoization – Caching Results for Better Performance.</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2012-08-27T01:35:00+05:30'><span class='date'><span class='date-month'>Aug</span> <span class='date-day'>27</span><span class='date-suffix'>th</span>, <span class='date-year'>2012</span></span> <span class='time'>1:35 am</span></time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><h2>Introduction</h2>
+
+<p>Memoization is a technique used to cache result of a previously calculated value thus can avoid the need to recalculate.</p>
+
+<p>Simplest example.</p>
+
+<pre><code>function square(num){
+    return num*num;
+}
+
+square(10) //100
+</code></pre>
+
+<p>Each time when we call square(), value will re-calculate. Caching result is importent when we do CPU intensive tasks.</p>
+
+<p>Re-writing above code using cache</p>
+
+<!-- more -->
+
+
+<h3>Method 1</h3>
+
+<pre><code>function square(num){
+  var result = '';
+  if(!square.cache[num]){ 
+     console.log("Computing value...");
+     result = num*num;
+     square.cache[num] = result;  
+  }
+
+  return square.cache[num];
+
+}
+
+square.cache = {}
+
+square(10) //First time when we call this function. It calculates the value &amp;amp; cache it.
+square(10) // Second time onwards it return the result from cache.
+square(20) // square function will calculate again if its a new value.
+</code></pre>
+
+<p><img src="//lh5.googleusercontent.com/-cgSoKZkhTP8/UDqBhExqEJI/AAAAAAAAEWI/AbmfwJR7drM/s512/Screen%2520Shot%25202012-08-27%2520at%252012.39.49%2520AM.png" alt="Javascript Memoization" /></p>
+
+<h3>Method 2 Using hasOwnProperty</h3>
+
+<p>This method is useful when there are multiple arguments.</p>
+
+<pre><code>var square = function(num){
+
+            var key = Array.prototype.slice.call(num).join(""); 
+            // This won’t work if argument send as Object. Eg:-  newFun({name:”my name”, age:20});
+
+    if(!square.cache[key]){
+        var result={};
+
+                result = num *num;
+        //Computation
+          console.log("Computing value...");      
+    square.cache[key] = result;
+}
+
+return square.cache[key];
+}
+
+square.cache = {};
+</code></pre>
+
+<h3>Method 3 Using JSON.stringify, Array.join or argument.callee.</h3>
+
+<p>This method is useful when there are multiple arguments.</p>
+
+<pre><code>var square = function(num){
+
+            var key = Array.prototype.slice.call(num).join(""); 
+            // This won’t work if argument send as Object. Eg:-  newFun({name:”my name”, age:20});
+
+    if(!square.cache[key]){
+        var result={};
+
+                result = num *num;
+        //Computation
+          console.log("Computing value...");      
+    square.cache[key] = result;
+}
+
+return square.cache[key];
+}
+
+square.cache = {};
+</code></pre>
+
+<p>&mdash;-or&mdash;-</p>
+
+<pre><code>var square = function(num){
+    var key = JSON.stringify(Array.prototype.slice.call(num));
+
+    if(!square.cache[key]){
+    var result={};
+    //Computation
+        console.log("Computing value..."); 
+        result = num*num;
+    square.cache[key] = result;
+}
+
+return square.cache[key];
+}
+
+square.cache = {};
+</code></pre>
+
+<p>&mdash;or&mdash;-</p>
+
+<pre><code>var  square = function(num){
+    var thisFunc = arguments.callee, result;
+           if(!thisFunc.cache[num]){
+                   result = {}
+                   //Computation
+                   console.log("Computing value..."); 
+                   result = num*num;
+                   thisFunc.cache[num] = result;
+           }
+return thisFunc.cache[num];
+}
+
+square.cache = {}
+</code></pre>
+
+<p>Above method is not recommended since arguments.callee should be avoid and ECMAScript forbids use of arguments.callee() in strict mode.</p>
+
+<h3>Method 4</h3>
+
+<p>This will create a higher-order function called memoize() that accepts function and return a memoized version of it.</p>
+
+<pre><code>function memoize(f){
+                var cache = {};
+
+                return function(){
+
+                    var key = JSON.stringify(Array.prototype.slice.call(arguments));
+
+                    if(key in cache){
+                        console.log('From cache...')
+                        return cache[key]
+                    }else{
+                        console.log('Computing..')
+                        return cache[key] = f.apply(this,arguments);
+                    }
+
+                }
+
+            }
+
+//Usage
+
+var squareMem = memoize(square)
+squareMem(10);//100
+</code></pre>
+
+<p><img src="//lh4.googleusercontent.com/-Vl_3-kx6pRc/UDqBfFrRCqI/AAAAAAAAEV8/dcvtEihpM08/s512/Screen%2520Shot%25202012-08-27%2520at%25201.18.22%2520AM.png" alt="JavaScript Memoization" /></p>
+
+<p>&mdash;Or&mdash;</p>
+
+<pre><code>Function.prototype.memoiz = function(){
+
+               var cache = {}, self = this;
+
+               return function(arg){
+
+                   var key = JSON.stringify(Array.prototype.slice.call(arguments));
+
+                   if(key in cache){
+                        console.log('From cache...')
+                        return cache[key]
+                    }else{
+                        console.log('Computing..')
+                        return cache[key] = self(arg);
+                    }
+
+               }
+
+            }
+
+//Usage
+var squareMem = square.memoiz()
+squareMem(10); 
+squareMem(20);
+squareMem(30);
+squareMem(40);
+squareMem(50);
+</code></pre>
+
+<p><img src="//lh6.googleusercontent.com/-OTRcR6v1NuA/UDqBflwl-hI/AAAAAAAAEWA/xzuGB97mrek/s512/Screen%2520Shot%25202012-08-27%2520at%25201.20.38%2520AM.png" alt="JavaScript Memoization" /></p>
+
+<p>Under Closure section you can find all the cached results</p>
+
+<p><img src="//lh5.googleusercontent.com/-N2SfLU7PSW8/UDqBf5yr77I/AAAAAAAAEWE/S3zNNYRPCH8/s640/Screen%2520Shot%25202012-08-27%2520at%25201.34.25%2520AM.png" alt="JavaScript Memoization" /></p>
+
+<p><a href="https://github.com/addyosmani/memoize.js/blob/master/memoize.js">memoiz.js</a> is a memoization library hosted in Github.</p>
+
+<p>References
+<a href="http://addyosmani.com/blog/faster-javascript-memoization/">Faster javascript memoization</a>
+<a href="http://www.nczonline.net/blog/2009/01/27/speed-up-your-javascript-part-3/">Speed up your JavaScript, Part 3</a>
+<a href="http://unscriptable.com/2009/05/01/a-better-javascript-memoizer/">A Better Javascript Memoizer</a></p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Praveen Vijayan</span></span>
+
+      
+
+
+
+
+<time class='entry-date' datetime='2012-08-27T01:35:00+05:30'><span class='date'><span class='date-month'>Aug</span> <span class='date-day'>27</span><span class='date-suffix'>th</span>, <span class='date-year'>2012</span></span> <span class='time'>1:35 am</span></time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/javascript/'>javascript</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://praveenvijayan.github.io/blog/2012/08/27/javascript-memoization-caching-results-for-better-performance/" data-via="praveen_vijaya" data-counturl="http://praveenvijayan.github.io/blog/2012/08/27/javascript-memoization-caching-results-for-better-performance/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2012/08/11/mac-osx-shortcuts/" title="Previous Post: Mac OSX shortcuts">&laquo; Mac OSX shortcuts</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2012/09/13/installing-yeoman-front-end-development-stack-windows/" title="Next Post: Installing Yeoman Front-end development stack in Windows">Installing Yeoman Front-end development stack in Windows &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2015/01/09/front-end-d-workflow-redefined-jade/">Front-end Workflow Redefined - Modular Developemnt Using JADE, SCSS & Browserify</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/08/07/front-end-viewpoints-architecture-building-large-websites/">Tooling for Modern Web App Development</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/03/10/linktomob-share-your-links-quickly-and-easily-on-mobile-devices/">Linktomob - Share Your Links Quickly and Easily on Mobile Devices.</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/03/03/getting-started-with-yeoman-1-dot-0-beta-on-windows/">Getting Started With Yeoman 1.0 Beta on Windows</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/02/09/slidemote-universal-remote-control-for-html5-presentations/">Slidemote - Universal Remote Control for Html5 Presentations</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2015 - Praveen Vijayan -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

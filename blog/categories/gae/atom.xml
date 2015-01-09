@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Gae | Decodize]]></title>
+  <link href="http://praveenvijayan.github.io/blog/categories/gae/atom.xml" rel="self"/>
+  <link href="http://praveenvijayan.github.io/"/>
+  <updated>2015-01-09T23:32:21+05:30</updated>
+  <id>http://praveenvijayan.github.io/</id>
+  <author>
+    <name><![CDATA[Praveen Vijayan]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Linktomob - Share Your Links Quickly and Easily on Mobile Devices.]]></title>
+    <link href="http://praveenvijayan.github.io/blog/2013/03/10/linktomob-share-your-links-quickly-and-easily-on-mobile-devices/"/>
+    <updated>2013-03-10T20:08:00+05:30</updated>
+    <id>http://praveenvijayan.github.io/blog/2013/03/10/linktomob-share-your-links-quickly-and-easily-on-mobile-devices</id>
+    <content type="html"><![CDATA[<h2>Introduction</h2>
+
+<p><img src="http://lh6.googleusercontent.com/-3IhQtLdpY7g/UTy5XwzCNpI/AAAAAAAAFQE/srBx0ten90Q/s816/Linktomob%2520%2520%2520%2520Share%2520your%2520link%2520quickly.png" alt="Linktomob">
+Linktomob created with an aim to share link between multiple devices without any hassles. Switching links between mobile and desktop browsers is a difficult process. We face this issue when building responsive site, mobile apps/sites or like to view site on mobile device when you are on a desktop. In such situations we will mail link and open it on mobile device. But if we want to test that link on a friends device or on a public testing device, in such situation sharing the same link on magnitude of devices will be a Herculean task.</p>
+
+<!-- more -->
+
+
+<h2>How to use it?</h2>
+
+<p><img src="http://lh4.googleusercontent.com/-h0rnTDH0yTc/UTy0rmzpXnI/AAAAAAAAFP8/WMDtqclA6g8/s720/linktomob.jpg" alt="linktomob"></p>
+
+<ol>
+<li>Go to <a href="http://linktomob.appspot.com/"><a href="http://linktomob.appspot.com/">http://linktomob.appspot.com/</a></a>.</li>
+<li>Enter your mail id and activate your account.</li>
+<li>You will get a unique URL (<a href="http://linktomob.appspot.com/">http://linktomob.appspot.com/</a>{id}) and a bookmarklet.</li>
+<li>Drag n Drop bookmarklet into browser.</li>
+<li>Go to any link and click on linktomob bookmarklet.</li>
+<li>This will map the current url with your unique URL. You can access the site from any device using the link.</li>
+</ol>
+
+
+<h2>Features</h2>
+
+<ol>
+<li>No login.</li>
+<li>No browser plugin or add-on installation. Browser bookmarklet for all browsers.</li>
+<li>No app installation on mobile device.</li>
+<li>Platform independent - works on iOS, Blackberry, Windows phone, Android, Nokia etc..</li>
+<li>You have to remember only your linkmark url.</li>
+</ol>
+
+
+<h2>Linktomob URL structure</h2>
+
+<p><strong><em>URL</em></strong> <br>
+<a href="http://linktomob.appspot.com/">http://linktomob.appspot.com/</a>{id} <br>
+Eg: <a href="http://linktomob.appspot.com/1">http://linktomob.appspot.com/1</a></p>
+
+<p><strong><em>list linkmarked urls</em></strong> <br>
+<a href="http://linktomob.appspot.com/">http://linktomob.appspot.com/</a>{id}:{pageno} <br>
+Eg: <a href="http://linktomob.appspot.com/1:10">http://linktomob.appspot.com/1:10</a></p>
+
+<p><strong><em>regenerate bookmark</em></strong> <br>
+<a href="http://linktomob.appspot.com/">http://linktomob.appspot.com/</a>{id}/bookmark <br>
+Eg: <a href="http://linktomob.appspot.com/1/bookmark">http://linktomob.appspot.com/1/bookmark</a></p>
+]]></content>
+  </entry>
+  
+</feed>

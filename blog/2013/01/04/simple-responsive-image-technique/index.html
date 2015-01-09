@@ -1,0 +1,417 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Simple Responsive Image Technique - Decodize</title>
+  <meta name="author" content="Praveen Vijayan">
+
+  
+  <meta name="description" content="Serving resized images in Responsive Web Design.">
+  <meta name="keywords" content="images, Responsive Web Design (RWD), adaptive images, CDN, Image resize, mobile">
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://praveenvijayan.github.io/blog/2013/01/04/simple-responsive-image-technique">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Decodize" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="/javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Decodize</a></h1>
+  
+    <h2>console.log</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="rss" title="subscribe via RSS">RSS</a></li>
+  <li><a href="http://twitter.com/praveen_vijaya" rel="twitter" title="Twitter @praveen_vijaya">Twitter</a></li>
+  <li><a href="https://github.com/praveenvijayan" rel="github" title="Github">Github</a></li>
+  <li><a href="https://facebook.com/praveen.vijayan0" rel="facebook" title="Facebook">Facebook</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="sitesearch" value="praveenvijayan.github.io">
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/about">About</a></li>
+  <li><a href="/projects">Projects</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Simple Responsive Image Technique</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2013-01-04T00:19:00+05:30'><span class='date'><span class='date-month'>Jan</span> <span class='date-day'>4</span><span class='date-suffix'>th</span>, <span class='date-year'>2013</span></span> <span class='time'>12:19 am</span></time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>RWD (Responsive Web Design) is increasingly popular over past few years. One important problem faced by RWD is lack of a standardised solution to deliver resized images into multiple devices. We have wide range of device categories, screen resolutions, pixel densities and lack of bandwidth/connection detection methods, all made this process difficult.  There is no simple silver bullet  to solve this issue.</p>
+
+<p>This is a quick post on a simple technique I used to create responsive image. This is a javascript solution, but it will work in javascript disabled environment by using a noscript fallback. This technique will start with mobile image first &amp; there is no need to parse and replace image sources.</p>
+
+<!-- more -->
+
+
+<p>I’m using google picasa as my image host. I can resize images dynamically by setting width/height in the url.</p>
+
+<p><a href="http://demos.decodize.com/responsive-images/demo.html" title="Responsive images&quot; target=&quot;_blank">Responsive images demo</a></p>
+
+<p>Eg:
+//lh3.googleusercontent.com/-Rw0hpxt70co/ULeX80ncW3I/AAAAAAAAE6g/kIDj6u1zdyI/<strong>s640</strong>/query-loader1.jpg</p>
+
+<p>Setting <strong>s320</strong> will create image with width/Height (resize proportionally) 320px. We can also pass width or height. Setting <strong>w320</strong> will create an image with width 320px or passing <strong>h320</strong> will constrain height of dynamically created image to 320px. Now we have our server, which can provide us different images sizes upon request.</p>
+
+<p>You can use your own server methods or other resources like <a href="http://www.sencha.com/learn/how-to-use-src-sencha-io/">src.sencha.io</a> to resize images on the fly.</p>
+
+<h3>Technique</h3>
+
+<p>Using css fluid image technique scale image to viewpot. Get the device size and insert image using script.</p>
+
+<p><strong><em>CSS</em></strong></p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="nt">img</span> <span class="p">{</span>
+</span><span class='line'>  <span class="k">display</span><span class="o">:</span> <span class="k">block</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">border</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">max-width</span><span class="o">:</span> <span class="m">100%</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong><em>JavaScript</em></strong> <br></p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="o">&lt;</span><span class="nx">script</span><span class="o">&gt;</span>
+</span><span class='line'>    <span class="kd">var</span> <span class="nx">cwResImg</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+</span><span class='line'>  <span class="kd">var</span> <span class="nx">cwBpArry</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1382</span><span class="p">,</span> <span class="mi">992</span><span class="p">,</span> <span class="mi">768</span><span class="p">,</span> <span class="mi">480</span><span class="p">],</span> <span class="c1">//Image breakpoint arrays</span>
+</span><span class='line'>      <span class="nx">currIndex</span><span class="p">,</span>
+</span><span class='line'>      <span class="nx">cwResImgVal</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">max</span><span class="p">(</span><span class="nx">screen</span><span class="p">.</span><span class="nx">width</span><span class="p">,</span><span class="nx">screen</span><span class="p">.</span><span class="nx">height</span><span class="p">),</span>
+</span><span class='line'>      <span class="nx">hdpi</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">devicePixelRatio</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="o">?</span> <span class="nb">window</span><span class="p">.</span><span class="nx">devicePixelRatio</span> <span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+</span><span class='line'>      <span class="nx">rwdImgId</span> <span class="o">=</span> <span class="s2">&quot;rwdimg-&quot;</span><span class="o">+</span><span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span><span class="o">*</span><span class="mi">1000</span><span class="p">),</span>
+</span><span class='line'>      <span class="nx">tpl</span><span class="o">=</span><span class="s1">&#39;&lt;img src=&quot;{src}&quot; alt=&quot;{alt}&quot; title=&quot;{title}&quot; id=&quot;{rwdImgId}&quot; {attributes}&gt;&#39;</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="nx">cwBpArry</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">cwResImgVal</span><span class="p">);</span>
+</span><span class='line'>  <span class="nx">cwBpArry</span><span class="p">.</span><span class="nx">sort</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span><span class="nx">b</span><span class="p">){</span><span class="k">return</span> <span class="nx">a</span><span class="o">-</span><span class="nx">b</span><span class="p">});</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="k">if</span><span class="p">(</span><span class="nb">Array</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">){</span>
+</span><span class='line'>      <span class="nx">currIndex</span> <span class="o">=</span> <span class="nx">cwBpArry</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="nx">cwResImgVal</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+</span><span class='line'>  <span class="p">}</span><span class="k">else</span><span class="p">{</span>
+</span><span class='line'>      <span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="k">in</span> <span class="nx">cwBpArry</span><span class="p">){</span>
+</span><span class='line'>          <span class="k">if</span><span class="p">(</span><span class="nx">cwBpArry</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">===</span> <span class="nx">cwResImgVal</span><span class="p">){</span>
+</span><span class='line'>              <span class="nx">currIndex</span> <span class="o">=</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">i</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span>
+</span><span class='line'>          <span class="p">}</span>
+</span><span class='line'>      <span class="p">}</span>        
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="nx">cwBpArry</span><span class="p">[</span><span class="nx">currIndex</span><span class="p">]</span> <span class="o">=</span> <span class="nx">cwBpArry</span><span class="p">[</span><span class="nx">currIndex</span><span class="p">]</span> <span class="o">||</span> <span class="nx">cwBpArry</span><span class="p">[</span><span class="nx">currIndex</span><span class="o">-</span><span class="mi">1</span><span class="p">];</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="kd">var</span> <span class="nx">imgWid</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">max</span><span class="p">.</span><span class="nx">apply</span><span class="p">(</span><span class="nb">Math</span><span class="p">,</span> <span class="nx">cwBpArry</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="nx">cwBpArry</span><span class="p">[</span><span class="nx">currIndex</span><span class="p">]</span> <span class="o">?</span> <span class="nx">cwBpArry</span><span class="p">[</span><span class="nx">currIndex</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span> <span class="o">:</span> <span class="nx">cwBpArry</span><span class="p">[</span><span class="nx">currIndex</span><span class="p">];</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="k">return</span> <span class="p">{</span>
+</span><span class='line'>      <span class="nx">imgWid</span> <span class="o">:</span> <span class="nx">imgWid</span><span class="p">,</span>
+</span><span class='line'>      <span class="nx">hdpi</span><span class="o">:</span> <span class="nx">hdpi</span><span class="p">,</span>
+</span><span class='line'>      <span class="nx">id</span><span class="o">:</span><span class="nx">rwdImgId</span><span class="p">,</span>
+</span><span class='line'>      <span class="nx">rwdImg</span><span class="o">:</span><span class="kd">function</span><span class="p">(</span><span class="nx">arg</span><span class="p">){</span>
+</span><span class='line'>          
+</span><span class='line'>          <span class="kd">var</span> <span class="nx">src</span> <span class="o">=</span> <span class="nx">arg</span><span class="p">.</span><span class="nx">src</span> <span class="o">||</span> <span class="nx">arguments</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">||</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+</span><span class='line'>              <span class="nx">src</span> <span class="o">=</span> <span class="nx">src</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/\/s\d*\//</span><span class="p">,</span> <span class="s1">&#39;/s&#39;</span><span class="o">+</span><span class="nx">imgWid</span> <span class="o">*</span> <span class="nx">hdpi</span><span class="o">+</span><span class="s1">&#39;/&#39;</span><span class="p">),</span> <span class="c1">//picasa image size replacing (s340 to device width)</span>
+</span><span class='line'>              <span class="nx">title</span> <span class="o">=</span> <span class="nx">arg</span><span class="p">.</span><span class="nx">title</span> <span class="o">||</span> <span class="nx">arg</span><span class="p">.</span><span class="nx">alt</span> <span class="o">||</span> <span class="nx">arguments</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">||</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+</span><span class='line'>              <span class="nx">alt</span> <span class="o">=</span> <span class="nx">arg</span><span class="p">.</span><span class="nx">alt</span> <span class="o">||</span> <span class="nx">arg</span><span class="p">.</span><span class="nx">title</span> <span class="o">||</span> <span class="nx">arguments</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">||</span> <span class="nx">arguments</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">||</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+</span><span class='line'>              <span class="nx">attributes</span> <span class="o">=</span> <span class="nx">arg</span><span class="p">.</span><span class="nx">attr</span> <span class="o">||</span> <span class="nx">arguments</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">||</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+</span><span class='line'>              <span class="nx">img</span> <span class="o">=</span> <span class="nx">tpl</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="s1">&#39;{src}&#39;</span><span class="p">,</span><span class="nx">src</span><span class="p">).</span><span class="nx">replace</span><span class="p">(</span><span class="s1">&#39;{title}&#39;</span><span class="p">,</span><span class="nx">title</span><span class="p">).</span><span class="nx">replace</span><span class="p">(</span><span class="s1">&#39;{alt}&#39;</span><span class="p">,</span><span class="nx">alt</span><span class="p">).</span><span class="nx">replace</span><span class="p">(</span><span class="s1">&#39;{rwdImgId}&#39;</span><span class="p">,</span><span class="nx">rwdImgId</span><span class="p">).</span><span class="nx">replace</span><span class="p">(</span><span class="s1">&#39;{attributes}&#39;</span><span class="p">,</span><span class="nx">attributes</span><span class="p">);</span>
+</span><span class='line'>              <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">img</span><span class="p">)</span>
+</span><span class='line'>      <span class="p">}</span>
+</span><span class='line'>  <span class="p">};</span>
+</span><span class='line'><span class="p">}()</span>
+</span><span class='line'><span class="o">&lt;</span><span class="err">/script&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>
+Paste it in your page header. This will set width of the screen into ‘cwResImg’ variable. You can set image breakpoints in this variable <code>cwBpArry = [1382, 992, 768, 480];</code></p>
+
+<p><strong><em>HTML</em></strong> <br>
+Replace images in HTML with.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;noscript&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">&quot;http://lh6.googleusercontent.com/-nI33VLdtmFo/UN9MmPN6bHI/AAAAAAAAFEE/1uJBJ7-plEs/s720/Webpagetest-IE8-Octopress-Default-waterfall.png&quot;</span> <span class="na">alt=</span><span class="s">&quot;Responsive images test&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'><span class="nt">&lt;/noscript&gt;</span>
+</span><span class='line'><span class="nt">&lt;script&gt;</span>
+</span><span class='line'>  <span class="nx">cwResImg</span><span class="p">.</span><span class="nx">rwdImg</span><span class="p">(</span><span class="s2">&quot;http://lh6.googleusercontent.com/-nI33VLdtmFo/UN9MmPN6bHI/AAAAAAAAFEE/1uJBJ7-plEs/s450/Webpagetest-IE8-Octopress-Default-waterfall.png&quot;</span><span class="p">,</span> <span class="s1">&#39;Responsive images text script&#39;</span><span class="p">);</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="o">---</span><span class="nx">or</span><span class="o">----</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="nx">cwResImg</span><span class="p">.</span><span class="nx">rwdImg</span><span class="p">({</span><span class="nx">src</span><span class="o">:</span><span class="s1">&#39;http://lh6.googleusercontent.com/-nI33VLdtmFo/UN9MmPN6bHI/AAAAAAAAFEE/1uJBJ7-plEs/s450/Webpagetest-IE8-Octopress-Default-waterfall.png&#39;</span><span class="p">,</span> <span class="nx">alt</span><span class="o">:</span><span class="s1">&#39;Responsive images text script&#39;</span><span class="p">,</span> <span class="nx">title</span><span class="o">:</span><span class="s1">&#39;Responsive images text script&#39;</span><span class="p">});</span>
+</span><span class='line'><span class="nt">&lt;/script&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>It has two parts <br>
+1) noscript tag contains a standard image for fallback. If js is not supported, this image will show.</p>
+
+<p>2) Script part <br>
+Syntax</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="nx">cwResImg</span><span class="p">.</span><span class="nx">rwdImg</span><span class="p">(</span><span class="s2">&quot;src&quot;</span><span class="p">,</span><span class="s2">&quot;alt&quot;</span><span class="p">,</span><span class="s2">&quot;title&quot;</span><span class="p">,</span><span class="s2">&quot;class=&#39;myclass&#39;&quot;</span><span class="p">);</span>
+</span><span class='line'><span class="nx">or</span>
+</span><span class='line'><span class="nx">cwResImg</span><span class="p">.</span><span class="nx">rwdImg</span><span class="p">({</span><span class="nx">src</span><span class="o">:</span><span class="s2">&quot;src&quot;</span><span class="p">,</span> <span class="nx">alt</span><span class="o">:</span><span class="s2">&quot;alt&quot;</span><span class="p">,</span><span class="nx">title</span><span class="o">:</span><span class="s2">&quot;title&quot;</span><span class="p">,</span><span class="nx">attr</span><span class="o">:</span><span class="s2">&quot;class=&#39;myclass&#39;&quot;</span><span class="p">})</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="nx">cwResImg</span><span class="p">.</span><span class="nx">rwdImg</span><span class="p">(</span><span class="s2">&quot;http://lh6.googleusercontent.com/-nI33VLdtmFo/UN9MmPN6bHI/AAAAAAAAFEE/1uJBJ7-plEs/s450/Webpagetest-IE8-Octopress-Default-waterfall.png&quot;</span><span class="p">,</span><span class="s2">&quot;Responsive images text script&quot;</span><span class="p">,</span><span class="s2">&quot;Responsive images text script&quot;</span><span class="p">);</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>JavaScript variable ‘cwResImg’ will replace by the max width of the device.</p>
+
+<p>When page loads url will be like the following, if its a desktop with resolution more than 1382px</p>
+
+<p>//lh6.googleusercontent.com/-IdiwvKGQ8Lk/UN9KOZvdW7I/AAAAAAAAFDk/iSvy1_SZrrM/<strong>s1382</strong>/RTT%2520Decodize%2520github.png</p>
+
+<h3>Demo</h3>
+
+<p><a href="http://demos.decodize.com/responsive-images/demo.html" title="Responsive images&quot; target=&quot;_blank">Responsive images</a></p>
+
+<h3>Performance and Bandwidth</h3>
+
+<p>After including this there is a noticeable performance improvement in iPhone waterfall view.</p>
+
+<p>Before (11.866s) <br>
+<noscript>
+<img src="//lh6.googleusercontent.com/-VQbJXZuyy2g/UOXNzTDn7EI/AAAAAAAAFGY/4WE49NLo3Os/s800/Before%2520responsive%2520image.jpg" alt="Before responsive image" title="Before responsive image">
+</noscript><script>
+cwResImg.rwdImg(&ldquo;//lh6.googleusercontent.com/-VQbJXZuyy2g/UOXNzTDn7EI/AAAAAAAAFGY/4WE49NLo3Os/s800/Before%2520responsive%2520image.jpg&rdquo;,&ldquo;Before responsive image&rdquo;);
+</script></p>
+
+<p>After (8.841s) <br>
+<noscript>
+<img src="//lh5.googleusercontent.com/-M18BajmhKdE/UOXNzNWfpvI/AAAAAAAAFGU/RIjb8u81HeI/s800/After%2520responsive%2520image.jpg" alt="After responsive image" title="After responsive image">
+</noscript><script>
+cwResImg.rwdImg(&ldquo;//lh5.googleusercontent.com/-M18BajmhKdE/UOXNzNWfpvI/AAAAAAAAFGU/RIjb8u81HeI/s800/After%2520responsive%2520image.jpg&rdquo;,&ldquo;After responsive image&rdquo;);
+</script></p>
+
+<p><strong><em>Drawbacks</em></strong> <br>
+Messy HTML. <br>
+Accessibility</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Praveen Vijayan</span></span>
+
+      
+
+
+
+
+<time class='entry-date' datetime='2013-01-04T00:19:00+05:30'><span class='date'><span class='date-month'>Jan</span> <span class='date-day'>4</span><span class='date-suffix'>th</span>, <span class='date-year'>2013</span></span> <span class='time'>12:19 am</span></time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/html/'>html</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://praveenvijayan.github.io/blog/2013/01/04/simple-responsive-image-technique/" data-via="praveen_vijaya" data-counturl="http://praveenvijayan.github.io/blog/2013/01/04/simple-responsive-image-technique/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2012/12/30/moving-from-wordpress-to-octopress/" title="Previous Post: Moving from Wordpress to Octopress redesign notes">&laquo; Moving from Wordpress to Octopress redesign notes</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2013/02/09/slidemote-universal-remote-control-for-html5-presentations/" title="Next Post: Slidemote - Universal remote control for html5 presentations">Slidemote - Universal remote control for html5 presentations &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2015/01/09/front-end-d-workflow-redefined-jade/">Front-end Workflow Redefined - Modular Developemnt Using JADE, SCSS & Browserify</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/08/07/front-end-viewpoints-architecture-building-large-websites/">Tooling for Modern Web App Development</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/03/10/linktomob-share-your-links-quickly-and-easily-on-mobile-devices/">Linktomob - Share Your Links Quickly and Easily on Mobile Devices.</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/03/03/getting-started-with-yeoman-1-dot-0-beta-on-windows/">Getting Started With Yeoman 1.0 Beta on Windows</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/02/09/slidemote-universal-remote-control-for-html5-presentations/">Slidemote - Universal Remote Control for Html5 Presentations</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2015 - Praveen Vijayan -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

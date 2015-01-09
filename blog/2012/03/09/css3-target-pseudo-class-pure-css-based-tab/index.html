@@ -1,0 +1,347 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>CSS3 :target Pseudo-class – Pure CSS Based Tab - Decodize</title>
+  <meta name="author" content="Praveen Vijayan">
+
+  
+  <meta name="description" content="Check out the demos to know what we are going to achieve with pure CSS. Pure CSS tab
+Pure CSS Image lightbox
+Pure CSS notification Basics of target &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://praveenvijayan.github.io/blog/2012/03/09/css3-target-pseudo-class-pure-css-based-tab">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Decodize" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="/javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Decodize</a></h1>
+  
+    <h2>console.log</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="rss" title="subscribe via RSS">RSS</a></li>
+  <li><a href="http://twitter.com/praveen_vijaya" rel="twitter" title="Twitter @praveen_vijaya">Twitter</a></li>
+  <li><a href="https://github.com/praveenvijayan" rel="github" title="Github">Github</a></li>
+  <li><a href="https://facebook.com/praveen.vijayan0" rel="facebook" title="Facebook">Facebook</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="sitesearch" value="praveenvijayan.github.io">
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/about">About</a></li>
+  <li><a href="/projects">Projects</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">CSS3 :target Pseudo-class – Pure CSS Based Tab</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2012-03-09T21:39:00+05:30'><span class='date'><span class='date-month'>Mar</span> <span class='date-day'>9</span><span class='date-suffix'>th</span>, <span class='date-year'>2012</span></span> <span class='time'>9:39 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p><img src="//lh4.googleusercontent.com/-5feP7pZvEj0/UNnQk4R3oPI/AAAAAAAAE-0/In5XcEFSVis/s592/target.jpg" title="CSS :target" alt=":target" /></p>
+
+<p>Check out the demos to know what we are going to achieve with pure CSS.</p>
+
+<p><a href="http://www.decodize.com/demos/CSS3-target-pseudo-class/tab.html#tab1" title="Pure CSS tab">Pure CSS tab</a>
+<a href="http://www.decodize.com/demos/CSS3-target-pseudo-class/gallery.html" title="Pure CSS lightbox">Pure CSS Image lightbox</a>
+<a href="http://www.decodize.com/demos/CSS3-target-pseudo-class/notification.html" title="Pure CSS notification">Pure CSS notification</a></p>
+
+<h3>Basics of target</h3>
+
+<p>Target is a css3 selector. You can select an element using fragment identifier &amp; id.</p>
+
+<p><img src="//lh3.googleusercontent.com/-H_Fm2fJ1vCI/UNnQNAnRUnI/AAAAAAAAE-c/nHjmknOVYNc/s592/target-identifier.jpg" title="target selector CSS3" alt="target selector CSS3" /></p>
+
+<p>Clicking on a link with anchor identifier bring you to certain part of the page</p>
+
+<p><img src="//lh3.googleusercontent.com/-HBhkgcq1tNk/UNnQN5jyxoI/AAAAAAAAE-k/33JPv0ygFsU/s512/target-site.jpg" title="target selector CSS3" alt="target selector CSS3" /></p>
+
+<p>By using :target css3 selector we can select the element with same id &amp; can apply style.</p>
+
+<p><img src="//lh3.googleusercontent.com/-cNVIyPo_R-Y/UNnQM7S6-FI/AAAAAAAAE-U/YSxksbiLoU0/s592/target-diagram.jpg" title="target selector CSS3" alt="target selector CSS3" /></p>
+
+<p>Using this we are going to create a tab, image gallery &amp; notification only using CSS. Following codes are bare minimum requirement to build each modules. Please refer each demo’s code for more styling &amp; animation.</p>
+
+<!-- more -->
+
+
+<h3>Pure CSS tab</h3>
+
+<p><strong><em>HTML</em></strong></p>
+
+<pre><code>&lt;ul class="tab"&gt;
+&lt;li&gt;&lt;a href="#tab1"&gt;Tab1&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#tab2"&gt;Tab2&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#tab3"&gt;Tab3&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div id="tab1"&gt;Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip&lt;/div&gt;
+&lt;div id="tab2"&gt;Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip&lt;/div&gt;
+&lt;div id="tab3"&gt;Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam&lt;/div&gt;
+</code></pre>
+
+<p><strong><em>CSS</em></strong></p>
+
+<pre><code>.tab{
+    overflow:hidden;
+}
+.tab li{
+   float:left;
+   padding:10px;
+   background:#c1c1c1;
+}
+div{
+  display:none;
+}
+div:target{
+ display:block;
+} ​
+</code></pre>
+
+<p>This is the bare minimum code you need to create a CSS only tab. But we can take this further and can make a beautiful tab.</p>
+
+<p><a href="http://www.decodize.com/demos/CSS3-target-pseudo-class/tab.html#tab1" title="Pure CSS3 demo">Demo</a></p>
+
+<h3>Pure CSS image gallery [lightbox]</h3>
+
+<p><strong><em>HTML</em></strong></p>
+
+<pre><code>&lt;ul&gt;
+&lt;li id="flower"&gt;&lt;a href="#"&gt;&lt;img class="alignnone size-medium wp-image-161" title="IMG_0251" src="http://www.decodize.com/wp-content/uploads/2012/03/IMG_0251-300x200.jpg" alt="" width="300" height="200"&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li id="squirrel"&gt;&lt;a href="#"&gt;&lt;img class="alignnone size-medium wp-image-160" title="IMG_8806" src="http://www.decodize.com/wp-content/uploads/2012/03/IMG_8806-300x200.jpg" alt="" width="300" height="200"&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+
+<p><strong>*CSS</strong>**</p>
+
+<pre><code>li{
+    position:absolute;
+    background:rgba(0,0,0,.5);
+    left:0;
+    right:0;
+    top:0;
+    bottom:0;
+    display:none;
+}
+li:target{
+    display:inline-block;
+    vertical-align:middle;
+}
+li img{
+  position:absolute;
+  top:50%;
+  left:50%;
+  margin-top:-100px;
+  margin-left:-150px;
+  display:block;
+}
+</code></pre>
+
+<p>With few lines of HTML &amp; CSS we created a modal window for image gallery. Next we will do some animations &amp; beautification.</p>
+
+<p><a href="http://www.decodize.com/demos/CSS3-target-pseudo-class/gallery.html">Check the demo</a></p>
+
+<h3>Pure CSS notification</h3>
+
+<p><strong><em>HTML</em></strong></p>
+
+<div id="wrap">I’m a pure css based notification bar. <a href="#">X</a></div>
+
+
+<p><strong><em>CSS</em></strong></p>
+
+<pre><code>#wrap {
+    position:absolute;
+    top:0;
+    opacity:0;
+}
+#wrap:target{
+    top:20%;
+    opacity:1;
+}
+​
+</code></pre>
+
+<p>The code displayed above is minimum required code to make a pure css notification. check out this full featured <a href="http://www.decodize.com/demos/CSS3-target-pseudo-class/notification.html">demo</a>.</p>
+
+<p><strong><em>Browser support</em></strong></p>
+
+<p>Chrome [18 win &amp; 17 mac] - Yes</p>
+
+<p>Safari [5.1.x win &amp; mac] - Yes</p>
+
+<p>Firefox [11 win &amp; 10.0.2 mac] - Yes</p>
+
+<p>Opera [11.61 win &amp; mac] - No</p>
+
+<p>Internet Explorer - (IE9 &amp; 10- Incomplete)</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Praveen Vijayan</span></span>
+
+      
+
+
+
+
+<time class='entry-date' datetime='2012-03-09T21:39:00+05:30'><span class='date'><span class='date-month'>Mar</span> <span class='date-day'>9</span><span class='date-suffix'>th</span>, <span class='date-year'>2012</span></span> <span class='time'>9:39 pm</span></time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/css/'>css</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://praveenvijayan.github.io/blog/2012/03/09/css3-target-pseudo-class-pure-css-based-tab/" data-via="praveen_vijaya" data-counturl="http://praveenvijayan.github.io/blog/2012/03/09/css3-target-pseudo-class-pure-css-based-tab/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2012/03/02/simplest-full-fledged-code-editor-using-data-text-slash-html/" title="Previous Post: Simplest full fledged code editor using data:text/html">&laquo; Simplest full fledged code editor using data:text/html</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2012/03/12/adding-roboto-font-in-windows-desktop/" title="Next Post: Adding Roboto font in windows desktop">Adding Roboto font in windows desktop &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2015/01/09/front-end-d-workflow-redefined-jade/">Front-end Workflow Redefined - Modular Developemnt Using JADE, SCSS & Browserify</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/08/07/front-end-viewpoints-architecture-building-large-websites/">Tooling for Modern Web App Development</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/03/10/linktomob-share-your-links-quickly-and-easily-on-mobile-devices/">Linktomob - Share Your Links Quickly and Easily on Mobile Devices.</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/03/03/getting-started-with-yeoman-1-dot-0-beta-on-windows/">Getting Started With Yeoman 1.0 Beta on Windows</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/02/09/slidemote-universal-remote-control-for-html5-presentations/">Slidemote - Universal Remote Control for Html5 Presentations</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2015 - Praveen Vijayan -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

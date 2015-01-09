@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Html,css,javascript, | Decodize]]></title>
+  <link href="http://praveenvijayan.github.io/blog/categories/html-css-javascript/atom.xml" rel="self"/>
+  <link href="http://praveenvijayan.github.io/"/>
+  <updated>2015-01-09T23:32:21+05:30</updated>
+  <id>http://praveenvijayan.github.io/</id>
+  <author>
+    <name><![CDATA[Praveen Vijayan]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Tooling for Modern Web App Development]]></title>
+    <link href="http://praveenvijayan.github.io/blog/2013/08/07/front-end-viewpoints-architecture-building-large-websites/"/>
+    <updated>2013-08-07T00:18:00+05:30</updated>
+    <id>http://praveenvijayan.github.io/blog/2013/08/07/front-end-viewpoints-architecture-building-large-websites</id>
+    <content type="html"><![CDATA[<p>My slides from Coffee @ DBG are up now.</p>
+
+<p>Front-end development workflow is becoming increasingly demanding as the complexity of the environment grows. Thankfully, there are many tools that can make your life as a front-end developer easier and perhaps, more rewarding.</p>
+
+<p>The primary objective of this session is to get an idea about end-to-end front-end workflow and useful tools. We will discuss hot tools like Yeoman, Grunt and Bower. But the session is not limited to these tools - we will touch each phase of front-end development like boiler-plating, preprocessors, performance, documentation, code quality, reporting and architecture etc.</p>
+
+<p><a href="https://speakerdeck.com/praveenvijayan/tooling-for-modern-web-app-developer">Tooling for modern web app development</a></p>
+
+<script async class="speakerdeck-embed" data-id="e6585340e1aa0130a36c321b9e1f6449" data-ratio="1.33333333333333" src="//speakerdeck.com/assets/embed.js"></script>
+
+]]></content>
+  </entry>
+  
+</feed>

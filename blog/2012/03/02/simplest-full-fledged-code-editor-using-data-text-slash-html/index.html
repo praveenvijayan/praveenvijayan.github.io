@@ -1,0 +1,250 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Simplest Full Fledged Code Editor Using Data:text/html - Decodize</title>
+  <meta name="author" content="Praveen Vijayan">
+
+  
+  <meta name="description" content="In one of Paul Irish’s presentation “The Primitives of the HTML5 Foundation”. He showed creating a simplest code editor using data uri link. &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://praveenvijayan.github.io/blog/2012/03/02/simplest-full-fledged-code-editor-using-data-text-slash-html">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Decodize" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="/javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Decodize</a></h1>
+  
+    <h2>console.log</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="rss" title="subscribe via RSS">RSS</a></li>
+  <li><a href="http://twitter.com/praveen_vijaya" rel="twitter" title="Twitter @praveen_vijaya">Twitter</a></li>
+  <li><a href="https://github.com/praveenvijayan" rel="github" title="Github">Github</a></li>
+  <li><a href="https://facebook.com/praveen.vijayan0" rel="facebook" title="Facebook">Facebook</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="sitesearch" value="praveenvijayan.github.io">
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/about">About</a></li>
+  <li><a href="/projects">Projects</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Simplest Full Fledged Code Editor Using Data:text/html</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2012-03-02T21:19:00+05:30'><span class='date'><span class='date-month'>Mar</span> <span class='date-day'>2</span><span class='date-suffix'>nd</span>, <span class='date-year'>2012</span></span> <span class='time'>9:19 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p><img src="//lh6.googleusercontent.com/-o3pkztrrh04/UNnMiffDXjI/AAAAAAAAE94/oHhv550Ac4o/s603/javascript-code-editor.jpg" title="Javascript code Editor" alt="Javascript code Editor" /></p>
+
+<p>In one of <a href="http://paulirish.com/">Paul Irish</a>’s presentation <a href="http://dl.dropbox.com/u/39519/talks/html5-foundation/index.html#1">“The Primitives of the HTML5 Foundation”</a>. He showed creating a simplest code editor using data uri <a href="http://dl.dropbox.com/u/39519/talks/html5-foundation/index.html#38">link</a>. Inspired from it, I created a small full fledged JavaScript code editor [code highlight &amp; line number] using Code mirror 2 &amp; data uri.</p>
+
+<p>Following is the code from the presentation. Paste the code in your browser&rsquo;s adress bar and convert it into a simple code editor.</p>
+
+<pre><code>data:text/html,&lt;pre contenteditable&gt;
+</code></pre>
+
+<!-- more -->
+
+
+<p>Following code create a full javascript code editor using <a href="http://codemirror.net/">Code mirror 2</a>.</p>
+
+<pre><code>data:text/html,&lt;link rel="stylesheet" type="text/css" href="https://raw.github.com/marijnh/CodeMirror/master/lib/codemirror.css"&gt;
+&lt;script src="https://raw.github.com/marijnh/CodeMirror/master/lib/codemirror.js"&gt;&lt;/script&gt;
+&lt;script src="http://www.decodize.com/codemirror/mode/javascript/javascript.js"&gt;&lt;/script&gt;
+&lt;link rel="stylesheet" type="text/css" href="http://www.decodize.com/codemirror/doc/docs.css"&gt;
+&lt;style type="text/css"&gt;.CodeMirror {border-top: 1px solid black; border-bottom: 1px solid black;}&lt;/style&gt;
+&lt;h1&gt;JavaScript code editor&lt;/h1&gt;
+&lt;textarea id="code" name="code"&gt;&lt;/textarea&gt;
+&lt;script&gt;var editor = CodeMirror.fromTextArea(document.getElementById("code"), {lineNumbers: true,matchBrackets: true});&lt;/script&gt;
+</code></pre>
+
+<p>Copy &amp; paste code in browser&rsquo;s address bar and it magically changes your browser in to a javascript code editor with syntax highlight &amp; line number.</p>
+
+<p>Adding following code will change browser in to a CSS editor.</p>
+
+<pre><code>data:text/html,&lt;link rel="stylesheet" type="text/css" href="https://raw.github.com/marijnh/CodeMirror/master/lib/codemirror.css"&gt;
+&lt;script src="https://raw.github.com/marijnh/CodeMirror/master/lib/codemirror.js"&gt;&lt;/script&gt;
+&lt;script src="https://raw.github.com/marijnh/CodeMirror/master/mode/javascript/javascript.js"&gt;&lt;/script&gt;
+&lt;link rel="stylesheet" type="text/css" href="https://raw.github.com/marijnh/CodeMirror/master/doc/docs.css"&gt;
+&lt;style type="text/css"&gt;.CodeMirror {border-top: 1px solid black; border-bottom: 1px solid black;}&lt;/style&gt;
+&lt;textarea id="code" name="code"&gt;&lt;/textarea&gt;&lt;script&gt;var editor = CodeMirror.fromTextArea(document.getElementById("code"), {lineNumbers: true,matchBrackets: true});&lt;/script&gt;
+</code></pre>
+
+<p>Creating a bookmarklet let us access to code editor instantly. Drag and drop the following bookmarklet in to your bookmark region and click it to transform the browser into a javascript code editor.</p>
+
+<p><a style="background:#eee; border:1px solid #ccc; padding:10px; border-radius:10px;" href="data:text/html,&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;https://raw.github.com/marijnh/CodeMirror/master/lib/codemirror.css&quot;&gt;&lt;script src=&quot;https://raw.github.com/marijnh/CodeMirror/master/lib/codemirror.js&quot;&gt;&lt;/script&gt;&lt;script src=&quot;https://raw.github.com/marijnh/CodeMirror/master/mode/javascript/javascript.js&quot;&gt;&lt;/script&gt;&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;https://raw.github.com/marijnh/CodeMirror/master/doc/docs.css&quot;&gt;&lt;style type=&quot;text/css&quot;&gt;.CodeMirror {border-top: 1px solid black; border-bottom: 1px solid black;}&lt;/style&gt;&lt;h1&gt;JavaScript code editor&lt;/h1&gt;&lt;textarea id=&quot;code&quot; name=&quot;code&quot;&gt;&lt;/textarea&gt;&lt;script&gt;var editor = CodeMirror.fromTextArea(document.getElementById(&quot;code&quot;), {lineNumbers: true,matchBrackets: true});&lt;/script&gt;" title="javascript code editor" target="_blank">JavaScript code editor</a></p>
+
+<p>Since code mirror has so many supported modes: you can create code editors based on modes. Check out <a href="http://codemirror.net/">Code mirror 2</a>.</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Praveen Vijayan</span></span>
+
+      
+
+
+
+
+<time class='entry-date' datetime='2012-03-02T21:19:00+05:30'><span class='date'><span class='date-month'>Mar</span> <span class='date-day'>2</span><span class='date-suffix'>nd</span>, <span class='date-year'>2012</span></span> <span class='time'>9:19 pm</span></time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/css/'>css</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://praveenvijayan.github.io/blog/2012/03/02/simplest-full-fledged-code-editor-using-data-text-slash-html/" data-via="praveen_vijaya" data-counturl="http://praveenvijayan.github.io/blog/2012/03/02/simplest-full-fledged-code-editor-using-data-text-slash-html/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2012/02/19/centering-an-element-with-percentage-height-and-width-using-css-experiment/" title="Previous Post: Centering an element with percentage height &amp; width using CSS [Experiment]">&laquo; Centering an element with percentage height &amp; width using CSS [Experiment]</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2012/03/09/css3-target-pseudo-class-pure-css-based-tab/" title="Next Post: CSS3 :target pseudo-class – Pure CSS based tab">CSS3 :target pseudo-class – Pure CSS based tab &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2015/01/09/front-end-d-workflow-redefined-jade/">Front-end Workflow Redefined - Modular Developemnt Using JADE, SCSS & Browserify</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/08/07/front-end-viewpoints-architecture-building-large-websites/">Tooling for Modern Web App Development</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/03/10/linktomob-share-your-links-quickly-and-easily-on-mobile-devices/">Linktomob - Share Your Links Quickly and Easily on Mobile Devices.</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/03/03/getting-started-with-yeoman-1-dot-0-beta-on-windows/">Getting Started With Yeoman 1.0 Beta on Windows</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/02/09/slidemote-universal-remote-control-for-html5-presentations/">Slidemote - Universal Remote Control for Html5 Presentations</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2015 - Praveen Vijayan -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

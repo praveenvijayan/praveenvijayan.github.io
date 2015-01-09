@@ -1,0 +1,267 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Slidemote - Universal Remote Control for Html5 Presentations - Decodize</title>
+  <meta name="author" content="Praveen Vijayan">
+
+  
+  <meta name="description" content="App to control html5 presentations.">
+  <meta name="keywords" content="html5, presentations, slides, remote-contol, keynote, nodejs, socketio, web-app, jitsu, websocket">
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://praveenvijayan.github.io/blog/2013/02/09/slidemote-universal-remote-control-for-html5-presentations">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Decodize" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="/javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Decodize</a></h1>
+  
+    <h2>console.log</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="rss" title="subscribe via RSS">RSS</a></li>
+  <li><a href="http://twitter.com/praveen_vijaya" rel="twitter" title="Twitter @praveen_vijaya">Twitter</a></li>
+  <li><a href="https://github.com/praveenvijayan" rel="github" title="Github">Github</a></li>
+  <li><a href="https://facebook.com/praveen.vijayan0" rel="facebook" title="Facebook">Facebook</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="sitesearch" value="praveenvijayan.github.io">
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/about">About</a></li>
+  <li><a href="/projects">Projects</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Slidemote - Universal Remote Control for Html5 Presentations</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2013-02-09T02:04:00+05:30'><span class='date'><span class='date-month'>Feb</span> <span class='date-day'>9</span><span class='date-suffix'>th</span>, <span class='date-year'>2013</span></span> <span class='time'>2:04 am</span></time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><h2>Introduction</h2>
+
+<p><a href="http://slidemote.jit.su/">Slidemote</a> is a web app created for easy integration of remote control facility for html5 presentations.</p>
+
+<p><img src="http://lh3.googleusercontent.com/-WyqIyccQK7c/URVkeV4sTwI/AAAAAAAAFKA/xlbs8XU4eNk/s720/slidemote.jpg" alt="Slidemote" /></p>
+
+<!-- More -->
+
+
+<h2>Integration</h2>
+
+<ol>
+<li>Add following script in your presentation.
+<code>&lt;script type="text/javascript" src="http://slidemote.jit.su/slidemote.js#slidemote"&gt;&lt;/script&gt;</code></li>
+<li>Append your id at the end of the script (Eg: &hellip;slidemote.js#YOUR_ID ).</li>
+<li>Goto - <a href="http://slidemote.jit.su">Slidemote</a>.</li>
+<li>Enter YOUR_ID &amp; connect.</li>
+<li>Slidemote currently supports (basic level) - <a href="http://lab.hakim.se/reveal-js/">revealjs</a>, <a href="http://bartaz.github.com/impress.js/#/bored">impressjs</a>, <a href="http://imakewebthings.com/deck.js/">deckjs</a> and <a href="http://flowtime-js.marcolago.com/">flowtime</a>.</li>
+</ol>
+
+
+<h2>How it works?</h2>
+
+<p>Slidemote uses <a href="http://socket.io/">socketio</a> to leverage websocket communication. Slidemote is hosted at <a href="http://jit.su/">Nodejitsu</a>, a nodejs hosting service.</p>
+
+<p><code><a href="http://slidemote.jit.su/slidemote.js#id">http://slidemote.jit.su/slidemote.js#id</a></code>  will communicate to server with your ID. Provide same id at &ldquo;<a href="http://slidemote.jit.su">http://slidemote.jit.su</a>&rdquo;, it will establish a websocket connection.</p>
+
+<h2>Demo</h2>
+
+<p>Go to <a href="http://slidemote.jit.su">Slidemote</a> and enter following key and press connect. Once connected you are able to control this presentation. It will take a few seconds to connect, be patient. Don&rsquo;t refresh page, result will be a new key and you have to enter it again on &lsquo;slidemote.jit.su&rsquo; to establish connection.</p>
+
+<p>Key: <input type="text" id="slidemoteCode" class="txtSlidemoteCode" placeholder="Your key"></p>
+
+<iframe id="iframeRevealjs" src="http://demos.decodize.com/slidemote/revealjs/index.php" frameborder="0" width="100%" height="600"></iframe>
+
+
+<h4>&nbsp;</h4>
+
+<h3>Other demos</h3>
+
+<p><span class="demoBtn"> <a href="http://demos.decodize.com/slidemote/flowtime/" target="_blank">Flowtime</a> <a href="http://demos.decodize.com/slidemote/impress/" target="_blank">Impress</a><a href="http://demos.decodize.com/slidemote/deckjs/" target="_blank">Deckjs</a></span></p>
+
+<h2>Screenshots</h2>
+
+<p><strong><em>Revealjs controls</em></strong><br>
+<img src="https://lh6.googleusercontent.com/-S0xne3Q_Q1M/URV4IL9AwXI/AAAAAAAAFKs/5SgrDTZ04qg/s512/slidemote-revealjs.jpg" alt="Revealjs" /><br>
+<strong><em>Deckjs &amp; Impressjs controls</em></strong><br>
+<img src="https://lh4.googleusercontent.com/-QHEzN0zQhag/URV4HBI6b0I/AAAAAAAAFKc/wP8-a0Kgulk/s512/slidemote-deckjs.jpg" alt="Revealjs" />
+<br>
+<strong><em>Flowtime controls</em></strong><br>
+<img src="https://lh5.googleusercontent.com/-0oK11Krj8XQ/URV4HPWHfKI/AAAAAAAAFKo/emPooYJ733Q/s512/slidemote-flowtime.jpg" alt="Revealjs" /></p>
+
+<h2>Video</h2>
+
+<iframe width="560" height="315" src="http://www.youtube.com/embed/XSHjlieYgjg" frameborder="0" allowfullscreen></iframe>
+
+
+
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Praveen Vijayan</span></span>
+
+      
+
+
+
+
+<time class='entry-date' datetime='2013-02-09T02:04:00+05:30'><span class='date'><span class='date-month'>Feb</span> <span class='date-day'>9</span><span class='date-suffix'>th</span>, <span class='date-year'>2013</span></span> <span class='time'>2:04 am</span></time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/html/'>html</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://praveenvijayan.github.io/blog/2013/02/09/slidemote-universal-remote-control-for-html5-presentations/" data-via="praveen_vijaya" data-counturl="http://praveenvijayan.github.io/blog/2013/02/09/slidemote-universal-remote-control-for-html5-presentations/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2013/01/04/simple-responsive-image-technique/" title="Previous Post: Simple Responsive image technique">&laquo; Simple Responsive image technique</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2013/03/03/getting-started-with-yeoman-1-dot-0-beta-on-windows/" title="Next Post: Getting started with Yeoman 1.0 Beta on Windows">Getting started with Yeoman 1.0 Beta on Windows &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2015/01/09/front-end-d-workflow-redefined-jade/">Front-end Workflow Redefined - Modular Developemnt Using JADE, SCSS & Browserify</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/08/07/front-end-viewpoints-architecture-building-large-websites/">Tooling for Modern Web App Development</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/03/10/linktomob-share-your-links-quickly-and-easily-on-mobile-devices/">Linktomob - Share Your Links Quickly and Easily on Mobile Devices.</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/03/03/getting-started-with-yeoman-1-dot-0-beta-on-windows/">Getting Started With Yeoman 1.0 Beta on Windows</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/02/09/slidemote-universal-remote-control-for-html5-presentations/">Slidemote - Universal Remote Control for Html5 Presentations</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2015 - Praveen Vijayan -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

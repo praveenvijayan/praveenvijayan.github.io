@@ -1,0 +1,632 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Decodize</title>
+  <meta name="author" content="Praveen Vijayan">
+
+  
+  <meta name="description" content="Updates
+14th Sep 2012 :
+1. Alternate method to install Yeoman using Chocolatey.
+2. Github Yeoman windows issues link. 15th Sep 2012 :
+1. Added &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://praveenvijayan.github.io/posts/2">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Decodize" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="/javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Decodize</a></h1>
+  
+    <h2>console.log</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="rss" title="subscribe via RSS">RSS</a></li>
+  <li><a href="http://twitter.com/praveen_vijaya" rel="twitter" title="Twitter @praveen_vijaya">Twitter</a></li>
+  <li><a href="https://github.com/praveenvijayan" rel="github" title="Github">Github</a></li>
+  <li><a href="https://facebook.com/praveen.vijayan0" rel="facebook" title="Facebook">Facebook</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="sitesearch" value="praveenvijayan.github.io">
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/about">About</a></li>
+  <li><a href="/projects">Projects</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div class="blog-index">
+  
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/09/13/installing-yeoman-front-end-development-stack-windows/">Installing Yeoman Front-end Development Stack in Windows</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2012-09-13T01:46:00+05:30'><span class='date'><span class='date-month'>Sep</span> <span class='date-day'>13</span><span class='date-suffix'>th</span>, <span class='date-year'>2012</span></span> <span class='time'>1:46 am</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><pre><code>Updates
+14th Sep 2012 :
+1. Alternate method to install Yeoman using Chocolatey.
+2. Github Yeoman windows issues link.
+
+15th Sep 2012 :
+1. Added description (Chocolatey method).
+
+17th Feb 2013 :
+1. On Feb 15th 2013 Yeoman 1.0 BETA released. Its not supported on windows yet. 
+
+3rd March 2013 :
+1. Yeoman 1.0 Beta can be installed on windows.
+</code></pre>
+
+<p>This post is for Yeoman 0.9 and a new beta version, Yeoman 1.0 Beta is available and installation instructions can be found here <a href="http://decodize.com/html/getting-started-with-yeoman-1-dot-0-beta-on-windows/">Yeoman 1.0 Beta installation on windows</a></p>
+
+<h2>What is Yeoman?</h2>
+
+<p><img src="//lh3.googleusercontent.com/-myRXm2caL_w/UFGha2n2IMI/AAAAAAAAEeA/NuBd3P0YJ0Y/s700/Yeoman.png" title="Yeoman" alt="Yeoman" /></p>
+
+<p>Its a tool to make the front-end development workflow easier. It includes tools and front-end frameworks that helps to create web apps quickly and easily.</p>
+
+<h2>Features</h2>
+
+<p>Initialize and scaffold a new project<br>
+Build &amp; deploy app<br>
+Launch server, preview &amp; live reload<br>
+Run automated tests using PhantomJS<br>
+Install &amp; update packages<br>
+Customise your apps framwork<br>
+Genarator for chrome app<br></p>
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2012/09/13/installing-yeoman-front-end-development-stack-windows/">Read on &rarr;</a>
+    </footer>
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/08/27/javascript-memoization-caching-results-for-better-performance/">JavaScript Memoization – Caching Results for Better Performance.</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2012-08-27T01:35:00+05:30'><span class='date'><span class='date-month'>Aug</span> <span class='date-day'>27</span><span class='date-suffix'>th</span>, <span class='date-year'>2012</span></span> <span class='time'>1:35 am</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h2>Introduction</h2>
+
+<p>Memoization is a technique used to cache result of a previously calculated value thus can avoid the need to recalculate.</p>
+
+<p>Simplest example.</p>
+
+<pre><code>function square(num){
+    return num*num;
+}
+
+square(10) //100
+</code></pre>
+
+<p>Each time when we call square(), value will re-calculate. Caching result is importent when we do CPU intensive tasks.</p>
+
+<p>Re-writing above code using cache</p>
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2012/08/27/javascript-memoization-caching-results-for-better-performance/">Read on &rarr;</a>
+    </footer>
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/08/11/mac-osx-shortcuts/">Mac OSX Shortcuts</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2012-08-11T01:21:00+05:30'><span class='date'><span class='date-month'>Aug</span> <span class='date-day'>11</span><span class='date-suffix'>th</span>, <span class='date-year'>2012</span></span> <span class='time'>1:21 am</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>I’m using both windows and mac. Sometimes I missed up with keyboard shortcuts. Both OS has its own plus and minus. Enter/Return key opens a folder in windows but it renames file/folder in mac, in windows double clicking on titlebar maximize window, but same thing minimizes window in mac (you have to enable it from preference > doc – “Double-click a windows titlebar to minimize”).</p>
+
+<h4>Global shortcuts</h4>
+
+<p>Quickly open finder</p>
+
+<pre><code>cmd + opt + spacebar = win + E
+</code></pre>
+
+<p><img src="//lh4.googleusercontent.com/-NEHHy_dLllU/UCVXbNfCbGI/AAAAAAAAES0/ddsv_OHrYNg/s720/Searching%2520%25E2%2580%259CThis%2520Mac%25E2%2580%259D-2.jpg" alt="Open Finder" /></p>
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2012/08/11/mac-osx-shortcuts/">Read on &rarr;</a>
+    </footer>
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/07/31/os-x-mountain-lion-upgrade-and-issues-with-old-applications/">OS X Mountain Lion Upgrade &amp; Issues With Old Applications</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2012-07-31T01:14:00+05:30'><span class='date'><span class='date-month'>Jul</span> <span class='date-day'>31</span><span class='date-suffix'>st</span>, <span class='date-year'>2012</span></span> <span class='time'>1:14 am</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Today upgraded to OS X Mountain lion. It took around 8hr to download 4.37GB with my home connection. First glance its pretty impressive and it took hardly 25 min to install everything in my retina mac book pro.</p>
+
+<p><img src="//lh5.googleusercontent.com/-xZb_ErT3DjM/UBbGQwpf-tI/AAAAAAAAEHM/MhJ__3-Yhh8/s640/2012-07-30%252018.39.23.jpg" alt="Mountain Lion" /></p>
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2012/07/31/os-x-mountain-lion-upgrade-and-issues-with-old-applications/">Read on &rarr;</a>
+    </footer>
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/07/29/safari-6-developer-tools-quick/">Safari 6 Developer Tools Quick Look</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2012-07-29T00:52:00+05:30'><span class='date'><span class='date-month'>Jul</span> <span class='date-day'>29</span><span class='date-suffix'>th</span>, <span class='date-year'>2012</span></span> <span class='time'>12:52 am</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>TOC</p>
+
+<pre>
+Introduction
+Process
+Accessing developer tool
+Shortcuts
+Anatomy
+    Navigation sidebar
+        Resources panel
+        Storage
+        Instrument
+        Search
+        Issue
+        Debug
+        Breakpoint
+        Log
+    Content browser
+    Details sidebar
+</pre>
+
+
+<h3>Introduction</h3>
+
+<p>Safari 6 web developer tool has substantial makeover from previous versions. It helps to prototype, debug and optimize web sites and safari extensions.</p>
+
+<h3>Process</h3>
+
+<p>Web development process can be generalized as follows. Developer tool can accelerate this process.</p>
+
+<p><img src="//lh4.googleusercontent.com/-6xgNkaaKKdc/UBSqeeNqZ_I/AAAAAAAAEGk/PQhQIXrG1Xo/s500/prototype.jpg" alt="Web development process" /></p>
+
+<p><strong><em>Prototype</em></strong>
+Prototype using HTML, CSS &amp; javascript. Safari Snippet editor can help to create and test code snippets / functional modules. Use web Inspector console to find any errors in the code. User agent switcher will help to quickly check code is working as expected in different browsers and devices. Open site in other browsers and devices directly from safari develop menu.</p>
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2012/07/29/safari-6-developer-tools-quick/">Read on &rarr;</a>
+    </footer>
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/06/06/codebase-sexy-way-to-manage-code-snippets/">Codebase : Sexy Way to Manage Code Snippets.</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2012-06-06T00:43:00+05:30'><span class='date'><span class='date-month'>Jun</span> <span class='date-day'>6</span><span class='date-suffix'>th</span>, <span class='date-year'>2012</span></span> <span class='time'>12:43 am</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h3>What is Codebase?</h3>
+
+<p><a href="http://codebase.decodize.com/">Codebase</a> is a code snippet management tool. It has 2 parts – 1. Server side code 2. Dreamweaver extension.</p>
+
+<p><img src="//a248.e.akamai.net/camo.github.com/b1d9fbc4770982d775755d86658c80a09e2d289c/687474703a2f2f6465636f64697a652e636f6d2f64656d6f732f636f6465626173652f636f6465626173652e6a7067" title="Codebase" alt="Codebase" /></p>
+
+<p>Following like demonstrates how Codebase will function.</p>
+
+<p><a href="http://codebase.decodize.com/">View codebase</a></p>
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2012/06/06/codebase-sexy-way-to-manage-code-snippets/">Read on &rarr;</a>
+    </footer>
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/05/07/build-nodejs-npm-installation-package-scratch/">How to Build a Nodejs Npm Package From Scratch.</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2012-05-07T00:25:00+05:30'><span class='date'><span class='date-month'>May</span> <span class='date-day'>7</span><span class='date-suffix'>th</span>, <span class='date-year'>2012</span></span> <span class='time'>12:25 am</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Aim is to create a node package and publish it in npm registery. This is a simple example code with which you can understand all the process involved to create, install and publish node packages.</p>
+
+<h3>What is nodejs?</h3>
+
+<p>Hmm.. you will get plenty of good resources when you google it with this keyword. Start by installing it from here : <a href="http://node.org/">nodejs</a></p>
+
+<h3>What is npm?</h3>
+
+<p><a href="http://npmjs.org/">Node package manager</a> and it is used to add or remove node applications. It came as a default package in newer node installations, both windows and mac. Install it on other platforms by refering this <a href="https://github.com/isaacs/npm">resource</a>. Check out all the <a href="http://search.npmjs.org/">npm registry entries here</a>.</p>
+
+<p>Install your fevorite application –
+    npm install app-name.
+Example:-
+    npm install jsbeautify</p>
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2012/05/07/build-nodejs-npm-installation-package-scratch/">Read on &rarr;</a>
+    </footer>
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/04/02/weight-scale-using-html5-drag-and-drop-and-css3-rotation/">Weight Scale Using HTML5 Drag &amp; Drop and CSS3 Rotation</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2012-04-02T00:14:00+05:30'><span class='date'><span class='date-month'>Apr</span> <span class='date-day'>2</span><span class='date-suffix'>nd</span>, <span class='date-year'>2012</span></span> <span class='time'>12:14 am</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><img src="//lh5.googleusercontent.com/-sWfGV-4_nWw/UNn15N7DaWI/AAAAAAAAFCY/FZtIQfW70ok/s628/html5-drag-and-drop-css3-rotation-weight-scale.jpg" title="Weight scale using HTML5 drag &amp; drop and CSS3 rotation" alt="Weight scale using HTML5 drag &amp; drop and CSS3 rotation" /></p>
+
+<p>Lets start with a demo (only works in chrome).</p>
+
+<p><a href="http://www.decodize.com/demos/Weight%20scale%20using%20HTML5%20drag%20&amp;%20drop%20CSS3%20rotation/weight.html">Weight scale</a></p>
+
+<p><strong><em>Usage</em></strong></p>
+
+<p>Drag and drop weight block into scale [over doted outline]. Double click to remove a weight. Demo uses jQuery for DOM manipulation, css3 rotation for needle movement.</p>
+
+<p><strong><em>HTML5 Drag and drop basics</em></strong></p>
+
+<p>Before implementing <a href="http://html5please.com/#drag">check the readiness of drag and drop</a> Currently it better to use jQuery UI or other JavaScript libraries to do a better cross browser handling.</p>
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2012/04/02/weight-scale-using-html5-drag-and-drop-and-css3-rotation/">Read on &rarr;</a>
+    </footer>
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/03/14/styledocco-create-generated-style-guide-and-documentation-for-your-web-project/">StyleDocco – Create Generated Style Guide and Documentation for Your Web Project</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2012-03-14T23:35:00+05:30'><span class='date'><span class='date-month'>Mar</span> <span class='date-day'>14</span><span class='date-suffix'>th</span>, <span class='date-year'>2012</span></span> <span class='time'>11:35 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://jacobrask.github.com/styledocco/" title="StyleDocco">StyleDocco</a> is a style guide and documentation generator. It parse CSS comments in your stylesheet and creates style guide based on the comments. Its a nodejs package and can install using npm install.</p>
+
+<p>Example style document generated using styledocco – <a href="http://jacobrask.github.com/styledocco/examples/bootstrap/docs/index.html">twitter bootstrap</a></p>
+
+<h3>Nodejs</h3>
+
+<p>It is JavaScript running on server using google’s V8 JavaScript engine. Download latest node installer (win/mac/source code) form <a href="http://nodejs.org/" title="Nodejs">nodejs.org</a> &amp; install it.</p>
+
+<p><img src="//lh4.googleusercontent.com/-qUi8aCGOZXE/UNnx0Jg6TRI/AAAAAAAAFA8/UaRKsCLNYDM/s576/nodejs.jpg" title="Nodejs" alt="Nodejs" /></p>
+
+<p>After installation open command prompt and type “node -v”. You will get the node version number.</p>
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2012/03/14/styledocco-create-generated-style-guide-and-documentation-for-your-web-project/">Read on &rarr;</a>
+    </footer>
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/03/12/adding-roboto-font-in-windows-desktop/">Adding Roboto Font in Windows Desktop</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2012-03-12T22:35:00+05:30'><span class='date'><span class='date-month'>Mar</span> <span class='date-day'>12</span><span class='date-suffix'>th</span>, <span class='date-year'>2012</span></span> <span class='time'>10:35 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><img src="//lh4.googleusercontent.com/-bpwEONwjg0U/UNneJ8jfmvI/AAAAAAAAE_M/2kOzXagRlM0/s512/roboto-font.jpg" title="Installing Roboto Font" alt="Roboto font" /></p>
+
+<p>in this post I’ll show you how to replace system fonts in windows with Roboto. Roboto is crafted for requirements of UI &amp; high-resolution screens.</p>
+
+<p><img src="//lh3.googleusercontent.com/-zNVgTJktFEg/UNneMBnZJlI/AAAAAAAAE_s/i1XrBRw1V8c/s416/roboto.jpg" title="Roboto font" alt="Roboto Font" /></p>
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2012/03/12/adding-roboto-font-in-windows-desktop/">Read on &rarr;</a>
+    </footer>
+  
+
+
+    </article>
+  
+  <div class="pagination">
+    
+      <a class="prev" href="/posts/3">&larr; Older</a>
+    
+    <a href="/blog/archives">Blog Archives</a>
+    
+    <a class="next" href="/index.html">Newer &rarr;</a>
+    
+  </div>
+</div>
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2015/01/09/front-end-d-workflow-redefined-jade/">Front-end Workflow Redefined - Modular Developemnt Using JADE, SCSS & Browserify</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/08/07/front-end-viewpoints-architecture-building-large-websites/">Tooling for Modern Web App Development</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/03/10/linktomob-share-your-links-quickly-and-easily-on-mobile-devices/">Linktomob - Share Your Links Quickly and Easily on Mobile Devices.</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/03/03/getting-started-with-yeoman-1-dot-0-beta-on-windows/">Getting Started With Yeoman 1.0 Beta on Windows</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/02/09/slidemote-universal-remote-control-for-html5-presentations/">Slidemote - Universal Remote Control for Html5 Presentations</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2015 - Praveen Vijayan -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

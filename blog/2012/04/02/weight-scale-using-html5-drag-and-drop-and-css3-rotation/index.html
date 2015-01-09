@@ -1,0 +1,299 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Weight Scale Using HTML5 Drag &amp; Drop and CSS3 Rotation - Decodize</title>
+  <meta name="author" content="Praveen Vijayan">
+
+  
+  <meta name="description" content="Lets start with a demo (only works in chrome). Weight scale Usage Drag and drop weight block into scale [over doted outline]. Double click to remove &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://praveenvijayan.github.io/blog/2012/04/02/weight-scale-using-html5-drag-and-drop-and-css3-rotation">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Decodize" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="/javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Decodize</a></h1>
+  
+    <h2>console.log</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="rss" title="subscribe via RSS">RSS</a></li>
+  <li><a href="http://twitter.com/praveen_vijaya" rel="twitter" title="Twitter @praveen_vijaya">Twitter</a></li>
+  <li><a href="https://github.com/praveenvijayan" rel="github" title="Github">Github</a></li>
+  <li><a href="https://facebook.com/praveen.vijayan0" rel="facebook" title="Facebook">Facebook</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="sitesearch" value="praveenvijayan.github.io">
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/about">About</a></li>
+  <li><a href="/projects">Projects</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Weight Scale Using HTML5 Drag &amp; Drop and CSS3 Rotation</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2012-04-02T00:14:00+05:30'><span class='date'><span class='date-month'>Apr</span> <span class='date-day'>2</span><span class='date-suffix'>nd</span>, <span class='date-year'>2012</span></span> <span class='time'>12:14 am</span></time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p><img src="//lh5.googleusercontent.com/-sWfGV-4_nWw/UNn15N7DaWI/AAAAAAAAFCY/FZtIQfW70ok/s628/html5-drag-and-drop-css3-rotation-weight-scale.jpg" title="Weight scale using HTML5 drag &amp; drop and CSS3 rotation" alt="Weight scale using HTML5 drag &amp; drop and CSS3 rotation" /></p>
+
+<p>Lets start with a demo (only works in chrome).</p>
+
+<p><a href="http://www.decodize.com/demos/Weight%20scale%20using%20HTML5%20drag%20&amp;%20drop%20CSS3%20rotation/weight.html">Weight scale</a></p>
+
+<p><strong><em>Usage</em></strong></p>
+
+<p>Drag and drop weight block into scale [over doted outline]. Double click to remove a weight. Demo uses jQuery for DOM manipulation, css3 rotation for needle movement.</p>
+
+<p><strong><em>HTML5 Drag and drop basics</em></strong></p>
+
+<p>Before implementing <a href="http://html5please.com/#drag">check the readiness of drag and drop</a> Currently it better to use jQuery UI or other JavaScript libraries to do a better cross browser handling.</p>
+
+<!-- more -->
+
+
+<p>HTML5 Drag and drop based on the Microsoft IE’s original implementation (IE5 and up). Image and links are dragabble by default in browsers. Proof? try drag and drop them in the address bar, you will be taken to the specified image/link. Set draggable=”true” in order to make other elements draggable.</p>
+
+<p>HTML5 Drag and drop based on the Microsoft IE’s original implementation (IE5 and up). Image and links are dragabble by default in browsers. Proof? try drag and drop them in the address bar, you will be taken to the specified image/link. Set draggable=”true” in order to make other elements draggable.</p>
+
+<pre><code>&lt;div draggable="true"&gt;Im a draggable content&lt;/div&gt;
+</code></pre>
+
+<p>Okay, now about drop zone. There is no droppable=”true”!!. We have to handle it via javascript events. Following are the events related to DnD.</p>
+
+<ul>
+<li>dragstart</li>
+<li>drag</li>
+<li>dragenter</li>
+<li>dragleave</li>
+<li>dragover</li>
+<li>drop</li>
+<li><p>dragend</p>
+
+<p>  <div draggable="true" id="drag">Im a draggable content</div>
+  <div id="dropzone">Drop area</div>
+  <script>
+  var elem = document.getElementById(&lsquo;drag&rsquo;);
+      elem.addEventListener(&lsquo;dragstart&rsquo;, function(e){
+        //Do whatever on when user start dragging.</p>
+
+<pre><code>  }, false)
+</code></pre>
+
+<p>  </script></p></li>
+</ul>
+
+
+<p>Next step is to drop our dragged payload. We need 2 events (dragover and dragenter) in order to make an element drop capable.</p>
+
+<pre><code>&lt;div draggable="true" id="drag"&gt;Im a draggable content&lt;/div&gt;
+&lt;div id="dropzone"&gt;Drop area&lt;/div&gt;
+&lt;script&gt;
+var elem = document.getElementById('drag'),
+    dropZone = document.getElementById('dropzone');
+    elem.addEventListener('dragstart', function(e){
+      //Do whatever on when user start dragging.
+    }, false);
+
+elem.addEventListener('dragenter', function(e){
+      //Things like visual cued for the drop zone can be added here.
+    }, false);
+
+elem.addEventListener('dragover', function(e){
+     //Things like visual cued for the drop zone can be added here.
+  }, false);
+
+&lt;/script&gt;
+</code></pre>
+
+<p>Now we have to do the actual drop. ‘dataTransfer’ holds the draged object. dataTransfer.getData(‘text/html’) will get you the actual dragged element.</p>
+
+<pre><code>var dropZone = document.getElementById('dropzone');
+ elem.addEventListener('drop', function(e){
+      e.preventDefault();
+      dropZone.innerHTML = e.dataTransfer.getData('text/html');      
+    }, false)
+</code></pre>
+
+<p><strong><em>Summary</em></strong></p>
+
+<p>DnD spec is not completed &amp; it is also painful to develop a cross browser DnD solution with pure API now.</p>
+
+<p><strong><em>Resources</em></strong></p>
+
+<p><a href="http://www.html5rocks.com/en/tutorials/dnd/basics/">Native HTML5 Drag and Drop – HTML5 Rocks</a>
+<a href="http://playground.html5rocks.com/#drag_and_drop">Drag and drop html play ground</a>
+<a href="https://developer.mozilla.org/En/DragDrop/Drag_and_Drop">Drag and Drop Mozilla MDN</a>
+<a href="http://www.useragentman.com/blog/2010/01/10/cross-browser-html5-drag-and-drop/">Article on useragentman.com</a></p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Praveen Vijayan</span></span>
+
+      
+
+
+
+
+<time class='entry-date' datetime='2012-04-02T00:14:00+05:30'><span class='date'><span class='date-month'>Apr</span> <span class='date-day'>2</span><span class='date-suffix'>nd</span>, <span class='date-year'>2012</span></span> <span class='time'>12:14 am</span></time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/css/'>css</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://praveenvijayan.github.io/blog/2012/04/02/weight-scale-using-html5-drag-and-drop-and-css3-rotation/" data-via="praveen_vijaya" data-counturl="http://praveenvijayan.github.io/blog/2012/04/02/weight-scale-using-html5-drag-and-drop-and-css3-rotation/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2012/03/14/styledocco-create-generated-style-guide-and-documentation-for-your-web-project/" title="Previous Post: StyleDocco – Create generated style guide and documentation for your web project">&laquo; StyleDocco – Create generated style guide and documentation for your web project</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2012/05/07/build-nodejs-npm-installation-package-scratch/" title="Next Post: How to build a nodejs npm package from scratch.">How to build a nodejs npm package from scratch. &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2015/01/09/front-end-d-workflow-redefined-jade/">Front-end Workflow Redefined - Modular Developemnt Using JADE, SCSS & Browserify</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/08/07/front-end-viewpoints-architecture-building-large-websites/">Tooling for Modern Web App Development</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/03/10/linktomob-share-your-links-quickly-and-easily-on-mobile-devices/">Linktomob - Share Your Links Quickly and Easily on Mobile Devices.</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/03/03/getting-started-with-yeoman-1-dot-0-beta-on-windows/">Getting Started With Yeoman 1.0 Beta on Windows</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/02/09/slidemote-universal-remote-control-for-html5-presentations/">Slidemote - Universal Remote Control for Html5 Presentations</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2015 - Praveen Vijayan -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

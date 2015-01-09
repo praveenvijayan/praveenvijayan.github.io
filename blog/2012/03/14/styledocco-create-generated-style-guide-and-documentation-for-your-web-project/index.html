@@ -1,0 +1,293 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>StyleDocco – Create Generated Style Guide and Documentation for Your Web Project - Decodize</title>
+  <meta name="author" content="Praveen Vijayan">
+
+  
+  <meta name="description" content="StyleDocco is a style guide and documentation generator. It parse CSS comments in your stylesheet and creates style guide based on the comments. Its &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://praveenvijayan.github.io/blog/2012/03/14/styledocco-create-generated-style-guide-and-documentation-for-your-web-project">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Decodize" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="/javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Decodize</a></h1>
+  
+    <h2>console.log</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="rss" title="subscribe via RSS">RSS</a></li>
+  <li><a href="http://twitter.com/praveen_vijaya" rel="twitter" title="Twitter @praveen_vijaya">Twitter</a></li>
+  <li><a href="https://github.com/praveenvijayan" rel="github" title="Github">Github</a></li>
+  <li><a href="https://facebook.com/praveen.vijayan0" rel="facebook" title="Facebook">Facebook</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="sitesearch" value="praveenvijayan.github.io">
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/about">About</a></li>
+  <li><a href="/projects">Projects</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">StyleDocco – Create Generated Style Guide and Documentation for Your Web Project</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2012-03-14T23:35:00+05:30'><span class='date'><span class='date-month'>Mar</span> <span class='date-day'>14</span><span class='date-suffix'>th</span>, <span class='date-year'>2012</span></span> <span class='time'>11:35 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p><a href="http://jacobrask.github.com/styledocco/" title="StyleDocco">StyleDocco</a> is a style guide and documentation generator. It parse CSS comments in your stylesheet and creates style guide based on the comments. Its a nodejs package and can install using npm install.</p>
+
+<p>Example style document generated using styledocco – <a href="http://jacobrask.github.com/styledocco/examples/bootstrap/docs/index.html">twitter bootstrap</a></p>
+
+<h3>Nodejs</h3>
+
+<p>It is JavaScript running on server using google’s V8 JavaScript engine. Download latest node installer (win/mac/source code) form <a href="http://nodejs.org/" title="Nodejs">nodejs.org</a> &amp; install it.</p>
+
+<p><img src="//lh4.googleusercontent.com/-qUi8aCGOZXE/UNnx0Jg6TRI/AAAAAAAAFA8/UaRKsCLNYDM/s576/nodejs.jpg" title="Nodejs" alt="Nodejs" /></p>
+
+<p>After installation open command prompt and type “node -v”. You will get the node version number.</p>
+
+<!-- more -->
+
+
+<p><img src="//lh6.googleusercontent.com/-hKDLrHMsOx8/UNnx0UWXjcI/AAAAAAAAFBA/6PzH0mwVQvA/s597/node-version.jpg" alt="Node version" /></p>
+
+<p>After nodejs installation, install StyleDocco via npm (Node package manager). In windows open command prompt/mac terminal  &amp; type.</p>
+
+<pre><code>npm install -g styledocco
+</code></pre>
+
+<p>In mac you have to type</p>
+
+<pre><code>sudo npm install -g styledocco
+</code></pre>
+
+<p><img src="//lh5.googleusercontent.com/-G6OPFhwUR2Y/UNnycaUmXXI/AAAAAAAAFBY/GBG-MXQEc2A/s597/styledocco-install.jpg" title="npm install -g styledocco" alt="npm install -g styledocco" /></p>
+
+<p>It will install in few minute depending upon your connection speed.</p>
+
+<h3>Preparing stylesheet for documentation</h3>
+
+<p>Styledocco uses <a href="//github.com/chjj/marked">marked</a> to parse &amp; generate HTML. First we will check a simple stylesheet (example from <a href="//github.com/jacobrask/styledocco/blob/master/README.md">author</a>).</p>
+
+<pre><code>/* Provides extra visual weight and identifies the primary action in a set of buttons &lt;br/&gt; ``` &amp;lt;button&amp;gt;Primary&amp;lt;/button&amp;gt; ``` */ &lt;br/&gt;.btn.primary { background: blue; color: white; }
+</code></pre>
+
+<p><img src="//lh4.googleusercontent.com/-9Rv1HOSqzr4/UNnxzzBrlhI/AAAAAAAAFA4/0weqZ_dvDFo/s597/readme-style-content.jpg" title="Styledocco" alt="Styledocco" /></p>
+
+<p>Save the css on your site folder.  Now need a readme.md file. Create a text file and rename it to readme.md as save it on the same folder. In read me file you can use markdown to show the details about the style sheet. This readme will be the landing page of your style guide. Readme.md is required otherwise styledocco will throw an error.</p>
+
+<p><img src="//lh6.googleusercontent.com/-jpRyqwdtiUI/UNnx1JaszXI/AAAAAAAAFBE/l7_jgaRz3PM/s597/readme-style.jpg" title="Style guide" alt="Style guide" /></p>
+
+<h3>Style guide creation</h3>
+
+<p><strong><em>Syntax</em></strong></p>
+
+<pre><code>styledocco [options] [INPUT]
+</code></pre>
+
+<p><strong><em>Options</em></strong></p>
+
+<p>–name, -n Name of the project (required)
+–out, -o Output directory (default: “docs”)
+–tmpl Directory for custom docs.jade template (optional)
+–overwrite Overwrite existing files (docs.css) in target directory.</p>
+
+<p><strong><em>Usage</em></strong></p>
+
+<p>Open command prompt and type.</p>
+
+<pre><code>styledocco -n styleguide style.css
+</code></pre>
+
+<p><img src="//lh4.googleusercontent.com/-WlKoGiVGuYw/UNnzMWkRTHI/AAAAAAAAFBo/wrtdBo9Szv0/s597/styledocco-create.jpg" alt="styledocco -n styleguide style.css" /></p>
+
+<p>Styledocco will parse all comment in the document &amp; create style guide based on the comments provided in your css file. Styledocco uses <a href="http://daringfireball.net/projects/markdown/syntax">markdown syntax</a>.</p>
+
+<p><img src="//lh4.googleusercontent.com/-cBE0-erg3As/UNnzLZYR1rI/AAAAAAAAFBg/bOfvY2Bbymc/s597/styledocco-output.jpg" alt="Styledocco" /></p>
+
+<p>Your style document will create inside docs folder. If you want a different directory to store output files use -o in your styledocco create command (<code>styledocco -n styleguide -o c:\styleguide style.css </code>). Open index.html form docs folder and you can see a botton and its style description.</p>
+
+<p>Styledocco is also capable of parsing LESS, SASS &amp; SCSS files and can generate style documents. Twitter <a href="http://jacobrask.github.com/styledocco/examples/bootstrap/docs/less/buttons.html">bootstrap style guide</a> is an example.</p>
+
+<p>Use markdown syntax in your readme.md &amp; stylesheet files. First &amp; second level of heading will automatically split into sections. If you want to exclude a comment, that you wish not being parsed by Styledocco, add a few space in front of the comment.</p>
+
+<p>Example -</p>
+
+<pre><code>/*This comment will parse by Styledocco*/
+     /*No this is an internal style comment*/
+</code></pre>
+
+<p>Large web projects we can use style guide for future reference and  optimization.</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Praveen Vijayan</span></span>
+
+      
+
+
+
+
+<time class='entry-date' datetime='2012-03-14T23:35:00+05:30'><span class='date'><span class='date-month'>Mar</span> <span class='date-day'>14</span><span class='date-suffix'>th</span>, <span class='date-year'>2012</span></span> <span class='time'>11:35 pm</span></time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/css/'>css</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://praveenvijayan.github.io/blog/2012/03/14/styledocco-create-generated-style-guide-and-documentation-for-your-web-project/" data-via="praveen_vijaya" data-counturl="http://praveenvijayan.github.io/blog/2012/03/14/styledocco-create-generated-style-guide-and-documentation-for-your-web-project/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2012/03/12/adding-roboto-font-in-windows-desktop/" title="Previous Post: Adding Roboto font in windows desktop">&laquo; Adding Roboto font in windows desktop</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2012/04/02/weight-scale-using-html5-drag-and-drop-and-css3-rotation/" title="Next Post: Weight scale using HTML5 drag &amp; drop and CSS3 rotation">Weight scale using HTML5 drag &amp; drop and CSS3 rotation &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2015/01/09/front-end-d-workflow-redefined-jade/">Front-end Workflow Redefined - Modular Developemnt Using JADE, SCSS & Browserify</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/08/07/front-end-viewpoints-architecture-building-large-websites/">Tooling for Modern Web App Development</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/03/10/linktomob-share-your-links-quickly-and-easily-on-mobile-devices/">Linktomob - Share Your Links Quickly and Easily on Mobile Devices.</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/03/03/getting-started-with-yeoman-1-dot-0-beta-on-windows/">Getting Started With Yeoman 1.0 Beta on Windows</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/02/09/slidemote-universal-remote-control-for-html5-presentations/">Slidemote - Universal Remote Control for Html5 Presentations</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2015 - Praveen Vijayan -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,404 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Installing Yeoman Front-end Development Stack in Windows - Decodize</title>
+  <meta name="author" content="Praveen Vijayan">
+
+  
+  <meta name="description" content="Installing Yeoman front-end developemnt bundle on windows.">
+  <meta name="keywords" content="yeoman, build tool, font-end, windows,">
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://praveenvijayan.github.io/blog/2012/09/13/installing-yeoman-front-end-development-stack-windows">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Decodize" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="/javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Decodize</a></h1>
+  
+    <h2>console.log</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="rss" title="subscribe via RSS">RSS</a></li>
+  <li><a href="http://twitter.com/praveen_vijaya" rel="twitter" title="Twitter @praveen_vijaya">Twitter</a></li>
+  <li><a href="https://github.com/praveenvijayan" rel="github" title="Github">Github</a></li>
+  <li><a href="https://facebook.com/praveen.vijayan0" rel="facebook" title="Facebook">Facebook</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="sitesearch" value="praveenvijayan.github.io">
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/about">About</a></li>
+  <li><a href="/projects">Projects</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Installing Yeoman Front-end Development Stack in Windows</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2012-09-13T01:46:00+05:30'><span class='date'><span class='date-month'>Sep</span> <span class='date-day'>13</span><span class='date-suffix'>th</span>, <span class='date-year'>2012</span></span> <span class='time'>1:46 am</span></time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><pre><code>Updates
+14th Sep 2012 :
+1. Alternate method to install Yeoman using Chocolatey.
+2. Github Yeoman windows issues link.
+
+15th Sep 2012 :
+1. Added description (Chocolatey method).
+
+17th Feb 2013 :
+1. On Feb 15th 2013 Yeoman 1.0 BETA released. Its not supported on windows yet. 
+
+3rd March 2013 :
+1. Yeoman 1.0 Beta can be installed on windows.
+</code></pre>
+
+<p>This post is for Yeoman 0.9 and a new beta version, Yeoman 1.0 Beta is available and installation instructions can be found here <a href="http://decodize.com/html/getting-started-with-yeoman-1-dot-0-beta-on-windows/">Yeoman 1.0 Beta installation on windows</a></p>
+
+<h2>What is Yeoman?</h2>
+
+<p><img src="//lh3.googleusercontent.com/-myRXm2caL_w/UFGha2n2IMI/AAAAAAAAEeA/NuBd3P0YJ0Y/s700/Yeoman.png" title="Yeoman" alt="Yeoman" /></p>
+
+<p>Its a tool to make the front-end development workflow easier. It includes tools and front-end frameworks that helps to create web apps quickly and easily.</p>
+
+<h2>Features</h2>
+
+<p>Initialize and scaffold a new project<br>
+Build &amp; deploy app<br>
+Launch server, preview &amp; live reload<br>
+Run automated tests using PhantomJS<br>
+Install &amp; update packages<br>
+Customise your apps framwork<br>
+Genarator for chrome app<br></p>
+
+<!-- more -->
+
+
+<p>More on <a href="http://yeoman.io/">Yeoman</a></p>
+
+<h2>Installation</h2>
+
+<p><strong><em>MAC OSX &amp; Linux Installations</em></strong>
+<a href="http://yeoman.io/gettingstarted.html">Yeoman site</a></p>
+
+<h3>Install Yeoman using Chocolatey (Method 1)</h3>
+
+<p>Chocolatey is a package manager for windows. Its like Linux <a href="http://www.apt-get.org/">apt-get</a>. Once Chocolatey installed, you can install <a href="http://chocolatey.org/packages">Chocolatey packages</a> from windows cmd. Install Chocolatey &amp; type <code>cinst yeoman</code> it will prompt you to install all necessary tools one by one.</p>
+
+<p><strong><em>Steps</em></strong></p>
+
+<ol>
+<li><p>Goto <a href="http://chocolatey.org/">chocolatey.org</a>
+Chocolatey NuGet is a Machine Package Manager, somewhat like apt-get, but built with windows in mind.</p></li>
+<li><p>Open cmd &amp; paste</p>
+
+<p> <code>C:> @powershell -NoProfile -ExecutionPolicy unrestricted -Command &ldquo;iex ((new-object net.webclient).DownloadString(&lsquo;<a href="http://bit.ly/psChocInstall">http://bit.ly/psChocInstall</a>&rsquo;))&rdquo; &amp;&amp; SET PATH=%PATH%;%systemdrive%\chocolatey\bin</code></p></li>
+<li><p>Type</p>
+
+<p> <code>c:> cinst yeoman</code></p></li>
+</ol>
+
+
+<p>It will fetch &amp; install all dependent files.</p>
+
+<p>Done!!</p>
+
+<p>Yeoman installed on windows and now its time to play with yeoman commands. Close and reopen cmd.</p>
+
+<p><code>C:> yeoman init &ndash;disable-insight</code></p>
+
+<p>This will create bolierplate for your next application. To launch preview server and run application locally use <code>yeoman server --disable-insight</code>.</p>
+
+<p><a href="#workingwithyeoman">more commands</a></p>
+
+<h3>Windows (Method 2)</h3>
+
+<p><strong><em>Prerequisites</em></strong></p>
+
+<p><img src="//lh4.googleusercontent.com/-xoaNrBJVhb4/UFGhI1Yb-DI/AAAAAAAAEd4/H8jmtEmtWX0/h101/logo.png" alt="Ruby Installer" /></p>
+
+<p>This is a self-contained Windows-based installer that includes the Ruby language, an execution environment, important documentation, and more.</p>
+
+<p><a href="http://rubyinstaller.org/downloads/">Download &amp; install</a></p>
+
+<p><img src="//lh5.googleusercontent.com/-D142mVO-EyY/UFGnTiAV55I/AAAAAAAAEfA/Dx2ozFXEWPg/h77/Compass.png" alt="Compass" /></p>
+
+<p>Compass is an open-source CSS Authoring Framework.</p>
+
+<p><a href="http://compass-style.org/install/">Download &amp; install</a></p>
+
+<p><img src="//lh5.googleusercontent.com/-yezu0Kt1GQY/UFGUx47AG3I/AAAAAAAAEdc/Mwzq6Xh1o2I/h96/logo.png" alt="Nodejs" /></p>
+
+<p>Node.js is a platform built on Chrome’s JavaScript runtime for easily building fast, scalable network applications. Node.js uses an event-driven, non-blocking I/O model that makes it lightweight and efficient, perfect for data-intensive real-time applications that run across distributed devices.</p>
+
+<p><a href="http://nodejs.org/download/">Download &amp; install</a></p>
+
+<p><img src="//lh4.googleusercontent.com/-KCyI1MyDOHA/UFGoOQBtHKI/AAAAAAAAEfM/Cc-tabJ1rhw/h120/Git.png" alt="Git" /></p>
+
+<p>Git is a free and open source distributed version control system</p>
+
+<p><a href="http://git-scm.com/">Download &amp; install</a></p>
+
+<p><img src="//lh4.googleusercontent.com/-eRZHYGs6OW0/UFHn-7pfyLI/AAAAAAAAEg8/cU3--xx6b38/h120/phantomjs.png" alt="Phantomjs" /></p>
+
+<p>PhantomJS is a headless WebKit with JavaScript API.</p>
+
+<p><a href="http://phantomjs.org/download.html">Download &amp; Install</a>  – You have to add path in <a href="//lh6.googleusercontent.com/-iX-vxgYN8TA/UFHn-t4iB1I/AAAAAAAAEhA/DyqsFfxREP0/s483/phantomjs-path.png">Windows Environment Variable</a>.</p>
+
+<p><img src="//lh5.googleusercontent.com/-Y8JiSvnxVCA/UFGoq4UoShI/AAAAAAAAEfU/MT8lHS4x9ww/s128/github-windows.png" alt="Git windows" /></p>
+
+<p>The easiest way to use Git on Windows. [Optional]</p>
+
+<p><a href="http://windows.github.com/">Download &amp; install</a></p>
+
+<p><img src="http://www.python.org/images/python-logo.gif" alt="Python" /></p>
+
+<p>Python is a programming language that lets you work more quickly and integrate your systems more effectively.</p>
+
+<p><a href="http://www.python.org/download/">Download &amp; install</a></p>
+
+<p><strong><em>Steps</em></strong></p>
+
+<p>1.Download and install all above tools</p>
+
+<p>There are 2 method to install Yeoman.<br/>
+——a. Open command prompt &amp; type <code>C:\npm install yeoman</code><br/>
+——b. You can install using Git</p>
+
+<p>Clone Yeoman using git.</p>
+
+<p><img src="//lh5.googleusercontent.com/-gddq-GA3znE/UFGuEzDYy_I/AAAAAAAAEfw/eoQiF-cUTOM/s573/clone-yeoman.png" alt="Git Yeoman" /></p>
+
+<p>&ndash;Or&ndash;</p>
+
+<p>If you have installed  Github for windows tool. “Clone in windows” from Github Yeoman page.</p>
+
+<p><img src="//lh3.googleusercontent.com/-2ArR_EW7eJE/UFGjrlAT_AI/AAAAAAAAEeI/Wt1KPSGi3AI/s499/github.jpg" alt="Git Windows app" /></p>
+
+<p>Clicking on “Clone in Windows” will open up windows github tool.</p>
+
+<p><img src="//lh3.googleusercontent.com/-JC2F7-gm5IA/UFGkWaoooKI/AAAAAAAAEf4/4LhO6MhJv78/s728/yeoman.jpg" alt="Git Windows app" /></p>
+
+<p>After cloning right click and open files in explorer.</p>
+
+<p><img src="//lh4.googleusercontent.com/-Pg97eRwiXJk/UFGkXLTeaCI/AAAAAAAAEeU/o6juq4Tcw1w/s470/yeoman-file.jpg" alt="Yeoman CLI" /></p>
+
+<p>shift + right click inside the root folder. You will get an option “Open Command Window Here”.</p>
+
+<pre><code>npm install -g
+</code></pre>
+
+<p>You will get following screen if its a success.</p>
+
+<p><img src="//lh5.googleusercontent.com/-NSp0fAUcv2E/UFGUlSPGL6I/AAAAAAAAEdU/Y_ZOc_L0zqg/s677/yeoman-cmd.jpg" alt="Yeoman installation" /></p>
+
+<p>Done!!
+<a href="#" id="workingwithyeoman"></a></p>
+
+<h3>Working with Yeoman</h3>
+
+<pre><code>yeoman init
+</code></pre>
+
+<p><img src="//lh4.googleusercontent.com/-yTQAGVESviU/UFGVgz57ZrI/AAAAAAAAEdk/JNF3pcmFTgc/s677/yeoman-init.jpg" alt="Yeoman init" /></p>
+
+<p><img src="//lh4.googleusercontent.com/-mpa2LuQhyzU/UFG6jVL5GjI/AAAAAAAAEgk/TDlSWMZtClA/s800/yeoman-server.png" alt="Yeoman server" /></p>
+
+<pre><code>yeoman init      # Initialize and scaffold a new project using generator templates
+yeoman build     # Build an optimized version of your app, ready to deploy
+yeoman server    # Launch a preview server which will begin watching for changes
+yeoman test      # Run a Mocha test harness in a headless PhantomJS
+
+yeoman install   # Install a package from the client-side package registry
+yeoman uninstall # Uninstall the package
+yeoman update    # Update a package to the latest version
+yeoman list      # List the packages currently installed
+yeoman search    # Query the registry for matching package names
+yeoman lookup    # Look up info on a particular package
+</code></pre>
+
+<p><a href="http://yeoman.io/commandline.html">more commands and help</a></p>
+
+<h2>Github Yeoman Windows issue</h2>
+
+<p>File bugs &amp; issues here <a href="https://github.com/yeoman/yeoman/issues/216">github yeoman windows issue</a></p>
+
+<h2>Summary</h2>
+
+<p>Its a super cool tool that helps to streamline front-end workflow.</p>
+
+<h2>Resources</h2>
+
+<p><a href="http://yeoman.io/">Yeoman home page</a> <br>
+<a href="https://github.com/yeoman/yeoman/">Yeoman Github page</a> <br>
+<a href="https://github.com/yeoman/yeoman/issues">Yeoman issues</a> <br>
+<a href="https://github.com/mklabs/yeoman/wiki/_pages">Yeoman documentation</a></p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Praveen Vijayan</span></span>
+
+      
+
+
+
+
+<time class='entry-date' datetime='2012-09-13T01:46:00+05:30'><span class='date'><span class='date-month'>Sep</span> <span class='date-day'>13</span><span class='date-suffix'>th</span>, <span class='date-year'>2012</span></span> <span class='time'>1:46 am</span></time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/css/'>css</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://praveenvijayan.github.io/blog/2012/09/13/installing-yeoman-front-end-development-stack-windows/" data-via="praveen_vijaya" data-counturl="http://praveenvijayan.github.io/blog/2012/09/13/installing-yeoman-front-end-development-stack-windows/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2012/08/27/javascript-memoization-caching-results-for-better-performance/" title="Previous Post: JavaScript Memoization – Caching results for better performance.">&laquo; JavaScript Memoization – Caching results for better performance.</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2012/10/06/sublime-text-2-bidirectional-language-support-plugin/" title="Next Post: Sublime Text 2 Bidirectional Language support – plugin">Sublime Text 2 Bidirectional Language support – plugin &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2015/01/09/front-end-d-workflow-redefined-jade/">Front-end Workflow Redefined - Modular Developemnt Using JADE, SCSS & Browserify</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/08/07/front-end-viewpoints-architecture-building-large-websites/">Tooling for Modern Web App Development</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/03/10/linktomob-share-your-links-quickly-and-easily-on-mobile-devices/">Linktomob - Share Your Links Quickly and Easily on Mobile Devices.</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/03/03/getting-started-with-yeoman-1-dot-0-beta-on-windows/">Getting Started With Yeoman 1.0 Beta on Windows</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/02/09/slidemote-universal-remote-control-for-html5-presentations/">Slidemote - Universal Remote Control for Html5 Presentations</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2015 - Praveen Vijayan -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

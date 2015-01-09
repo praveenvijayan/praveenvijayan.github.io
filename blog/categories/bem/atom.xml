@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Bem, | Decodize]]></title>
+  <link href="http://praveenvijayan.github.io/blog/categories/bem/atom.xml" rel="self"/>
+  <link href="http://praveenvijayan.github.io/"/>
+  <updated>2015-01-09T23:32:21+05:30</updated>
+  <id>http://praveenvijayan.github.io/</id>
+  <author>
+    <name><![CDATA[Praveen Vijayan]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Front-end Workflow Redefined - Modular Developemnt Using JADE, SCSS & Browserify]]></title>
+    <link href="http://praveenvijayan.github.io/blog/2015/01/09/front-end-d-workflow-redefined-jade/"/>
+    <updated>2015-01-09T23:22:33+05:30</updated>
+    <id>http://praveenvijayan.github.io/blog/2015/01/09/front-end-d-workflow-redefined-jade</id>
+    <content type="html"><![CDATA[<p>Happy new year!!</p>
+
+<p>Front-end workflow redefined talk at Coffee @ DBG are up now.</p>
+
+<p>Front-end development is complex as we have to deal with diversified project environments. Tooling will help to ease our workflow.</p>
+
+<p>This presentation is about creating component based web development. Modular web development with JADE, SCSS and JS.</p>
+
+<p><a href="https://speakerdeck.com/praveenvijayan/front-end-workflow-redefined">Front-end Workflow Redefined</a></p>
+
+<script async class="speakerdeck-embed" data-id="f789669079880132ac40620a86ea453b" data-ratio="1.77777777777778" src="//speakerdeck.com/assets/embed.js"></script>
+
+]]></content>
+  </entry>
+  
+</feed>

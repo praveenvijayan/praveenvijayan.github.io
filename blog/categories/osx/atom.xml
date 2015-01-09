@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Osx | Decodize]]></title>
+  <link href="http://praveenvijayan.github.io/blog/categories/osx/atom.xml" rel="self"/>
+  <link href="http://praveenvijayan.github.io/"/>
+  <updated>2015-01-09T23:32:21+05:30</updated>
+  <id>http://praveenvijayan.github.io/</id>
+  <author>
+    <name><![CDATA[Praveen Vijayan]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Mac OSX Shortcuts]]></title>
+    <link href="http://praveenvijayan.github.io/blog/2012/08/11/mac-osx-shortcuts/"/>
+    <updated>2012-08-11T01:21:00+05:30</updated>
+    <id>http://praveenvijayan.github.io/blog/2012/08/11/mac-osx-shortcuts</id>
+    <content type="html"><![CDATA[<p>I’m using both windows and mac. Sometimes I missed up with keyboard shortcuts. Both OS has its own plus and minus. Enter/Return key opens a folder in windows but it renames file/folder in mac, in windows double clicking on titlebar maximize window, but same thing minimizes window in mac (you have to enable it from preference > doc – “Double-click a windows titlebar to minimize”).</p>
+
+<h4>Global shortcuts</h4>
+
+<p>Quickly open finder</p>
+
+<pre><code>cmd + opt + spacebar = win + E
+</code></pre>
+
+<p><img src="//lh4.googleusercontent.com/-NEHHy_dLllU/UCVXbNfCbGI/AAAAAAAAES0/ddsv_OHrYNg/s720/Searching%2520%25E2%2580%259CThis%2520Mac%25E2%2580%259D-2.jpg" alt="Open Finder" /></p>
+
+<!-- more -->
+
+
+<p>Close window
+    cmd+w = crtl + w</p>
+
+<p>Show desktop
+    fn + f11 = win + D</p>
+
+<p>Lock screen
+    shift + ctrl + power = win + L</p>
+
+<p>Force quit applications
+    cmd+opt+esc = ctrl+shift+esc</p>
+
+<p><img src="//lh6.googleusercontent.com/-ei7AF6UFl9w/UCVW5E8AmyI/AAAAAAAAERQ/ZUsg5uFn9AY/s576/Force%2520Quit%2520Applications.jpg" alt="Force Quit" /></p>
+
+<p>Switch between opened application
+    cmd+tab = ctrl+tab / win+tab</p>
+
+<p>Switch between same application window
+    cmd + ~</p>
+
+<p>Increase volume or brightness by quarter increment
+    shift+option+f12 – volume
+    shift+opton+f2 – brightness</p>
+
+<p><img src="//lh4.googleusercontent.com/-SwukWiuyJSs/UCVXHzH396I/AAAAAAAAERw/hpzYPZ-ytKI/s912/Screen%2520Shot%25202012-08-10%2520at%252010.27.58%2520AM.png" alt="Volume" /></p>
+
+<p>Show/Hide – Dock
+    opt+cmd+D</p>
+
+<p>Screen capture
+    shift + cmd + 3
+    shift + cmd + 4</p>
+
+<h4>Finder shortcuts</h4>
+
+<p>Mac automatically refreshes every folder when something modifies [fails sometimes]. One annoying thing when working with finder is icons are not arranging automatically to grid.</p>
+
+<p>There are a few ways to arrange items in finder. Clean up command will snap item to grid. Following key stocks will arrange items in a nice way and these are roughly equal to ‘Refresh’ (F5) in windows.</p>
+
+<pre><code>cmd+opt+1 – clean up by name
+cmd+opt+2 - clean up by kind
+cmd+opt+5 - clean up by date modified
+cmd+opt+6 - clean up by size
+cmd+opt+7 - clean up by type
+</code></pre>
+
+<p>Tip 1: Drag and release folder while pressing cmd will arrange folder/files to grid.
+Tip 2 : Press opt key &amp; right click -> ‘Arrange by’ will change to ‘Sort by’. You can sort using name, kind, size etc..</p>
+
+<p><img src="//lh5.googleusercontent.com/-wfG0sXeGOyg/UCVXPcZusrI/AAAAAAAAESI/RjdwjzaTVSk/s640/Screen%2520Shot%25202012-08-10%2520at%252010.33.59%2520PM.png" alt="Clean up by" /></p>
+
+<p>Go to folder
+    cmd+shift+G
+network
+    cmd + K
+using terminal
+    open <path>
+Parent folder
+    cmd + uparrow
+open folder
+    cmd+down
+back
+    cmd+[
+forward
+    cmd+]</p>
+
+<p>Open folder
+    cmd + downarrow or cmd+o = enter</p>
+
+<p>Duplicate a file/folder
+    cmd+D</p>
+
+<p>Open a folder in terminal from finder.
+You can use either Drag n Drop folder into terminal icon or enable service “New terminal at folder” from Preference > keyboard. Right click on any folder and select “New terminal at folder” from the context menu.</p>
+
+<p><img src="//lh3.googleusercontent.com/-BE1lWJlrp04/UC8bALRPrfI/AAAAAAAAEU8/q0VrvYI79aw/s512/Screen%2520Shot%25202012-08-18%2520at%25209.59.20%2520AM.png" alt="Open a folder in terminal from finder" /></p>
+
+<p><img src="//lh6.googleusercontent.com/-LyNVvOKCsw4/UC8a_B1ebkI/AAAAAAAAEU0/GtPDSVVWNz8/s512/Screen%2520Shot%25202012-08-18%2520at%252010.01.07%2520AM.png" alt="Open current folder from terminal to finder" /></p>
+
+<p><code>$ open .</code></p>
+
+<p><img src="//lh3.googleusercontent.com/-PSHfkVtXd0w/UC8cUWZiTuI/AAAAAAAAEVE/HeNKjPfxStg/s1024/Screen%2520Shot%25202012-08-18%2520at%252010.08.20%2520AM.png" alt="Open folder" /></p>
+
+<h4>Hidden screencast tool</h4>
+
+<p>Quicktime has a screen capture tool.</p>
+
+<p><img src="//lh6.googleusercontent.com/-tIFgswYe28E/UCVXKE2EpII/AAAAAAAAER4/XBbuQaeHIbY/s800/Screen%2520Shot%25202012-08-10%2520at%252010.30.41%2520AM.png" alt="Quicktime screencast" /></p>
+
+<h4>Automator tips</h4>
+
+<p><img src="//lh3.googleusercontent.com/--JBFAp3xrWI/UCVdH2oyRRI/AAAAAAAAETs/u2OasUerfrc/s896/HT2488_ottolaunchpad----en.jpeg" alt="Automator Mac" /></p>
+
+<p>Automator is a tool that helps to automate repeated tasks.</p>
+
+<p><img src="//lh4.googleusercontent.com/-4z1LxPJ_h3E/UCVW5-I3-BI/AAAAAAAAERY/t_-EhPloRvk/s640/Automator.jpeg" alt="Automator mac" /></p>
+
+<p><strong><em>Copy file path</em></strong></p>
+
+<p>Some times you need to copy the path of a specified folder or file. You can use automator to copy the path.</p>
+
+<ol>
+<li>Open automator</li>
+<li>Select services</li>
+<li>Change – “service receives selected” to “file or folder” in application to “Finder“.</li>
+<li>Type “copy” in the filter section and drag n drop – “Copy to clipboard” to the workflow pane.</li>
+<li>Save it as – “Copy file path”.</li>
+</ol>
+
+
+<p><img src="//lh4.googleusercontent.com/-mAwEJ9Z5aHA/UCVXS7ALcoI/AAAAAAAAESY/HAbkiw7ChM0/s1000/Screen%2520Shot%25202012-08-10%2520at%252011.00.44%2520PM.png" alt="Copy file path Automator mac" /></p>
+
+<p>Now you can right click on any folder/file and can copy path. Assign a keyboard shortcut from Preference > keyboard.</p>
+
+<p><strong><em>Change image size</em></strong></p>
+
+<p><img src="https://lh6.googleusercontent.com/-VzUV1wNoj-8/UCVhNu4uXcI/AAAAAAAAEUE/rCaiCKEoVX4/s576/Screen%2520Shot%25202012-08-11%2520at%252012.57.57%2520AM.png" alt="Change image size Automator mac" /></p>
+
+<p><strong><em>Batch renaming files</em></strong></p>
+
+<p><img src="//lh4.googleusercontent.com/-cZ6phyLZdeU/UCVhNfxtthI/AAAAAAAAEUA/HNQO-1ZDZ1o/s576/Screen%2520Shot%25202012-08-11%2520at%252012.57.29%2520AM.png" alt="Batch renaming files Automator" /></p>
+
+<h4>Tools</h4>
+
+<p><strong><em>maximize window</em></strong>
+<a href="http://www.macupdate.com/app/mac/30591/right-zoom/">Right zoom</a> is a little free tool that converts mac’s default maximize behavior to maximize window to all available screen space.</p>
+
+<p><strong><em>Quick look plugins</em></strong>
+Do a 3 finger tap on any file will reveal a quick view with some basic info. You can extend its capabilities using plugins. Check quick look plugin to find more details.</p>
+
+<p><a href="http://www.quicklookplugins.com/">Quick look plugins</a></p>
+
+<h3>Resources</h3>
+
+<p><a href="http://www.maclife.com/article/features/15_automator_and_applescripts_you_can%E2%80%99t_live_without">15 Automator and AppleScripts You Can’t Live Without</a>
+<a href="http://mac.appstorm.net/how-to/applescript/10-awesome-uses-for-automator-explained/">10 Awesome Uses for Automator Explained</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[OS X Mountain Lion Upgrade &amp; Issues With Old Applications]]></title>
+    <link href="http://praveenvijayan.github.io/blog/2012/07/31/os-x-mountain-lion-upgrade-and-issues-with-old-applications/"/>
+    <updated>2012-07-31T01:14:00+05:30</updated>
+    <id>http://praveenvijayan.github.io/blog/2012/07/31/os-x-mountain-lion-upgrade-and-issues-with-old-applications</id>
+    <content type="html"><![CDATA[<p>Today upgraded to OS X Mountain lion. It took around 8hr to download 4.37GB with my home connection. First glance its pretty impressive and it took hardly 25 min to install everything in my retina mac book pro.</p>
+
+<p><img src="//lh5.googleusercontent.com/-xZb_ErT3DjM/UBbGQwpf-tI/AAAAAAAAEHM/MhJ__3-Yhh8/s640/2012-07-30%252018.39.23.jpg" alt="Mountain Lion" /></p>
+
+<!-- more -->
+
+
+<p>Installation was smooth &amp; fast.</p>
+
+<p><img src="//lh3.googleusercontent.com/-wLopL6XatfQ/UBbGbXtbXGI/AAAAAAAAEHc/ABMG8O1vcnY/s640/2012-07-30%252019.26.45.jpg" alt="OSX Mountain Lion" /></p>
+
+<p><img src="//lh4.googleusercontent.com/-M6bsG8iXg9s/UBbGVS8YOpI/AAAAAAAAEHU/uvuTv5zL7m0/s640/2012-07-30%252019.27.35.jpg" alt="OSX Mountain Lion" /></p>
+
+<p><img src="//lh4.googleusercontent.com/-5dd8iCyM0Y8/UBbGqgxT97I/AAAAAAAAEHk/O-yaApWQ3RY/s640/2012-07-30%252019.28.38.jpg" alt="OSX Mountain Lion" /></p>
+
+<p>After Installation I got an alert like this. Some programs are not compatible with OSX 10.8. Fortunately only program that is not compatible in my software lot was old Transmit FTP client.</p>
+
+<p><img src="//lh4.googleusercontent.com/-63b0OPKukPU/UBbHakUfXEI/AAAAAAAAEIQ/2-eNgseAy0U/s640/2012-07-30%252019.44.02.jpg" alt="OSX Mountain Lion" /></p>
+
+<p>Ater Installation notification center showed one more update</p>
+
+<p><img src="//lh4.googleusercontent.com/-f1w3vhTqE5A/UBbOGYCEmMI/AAAAAAAAEIo/iT3JfrY-nHc/s1024/Updates.jpg" alt="OSX Mountain Lion" /></p>
+
+<p>NetBeans 7.1.x was not working with Mountain Lion. In order to work java applications properly, you have to download latest Java version from Apple. Select java preference using spotlight, new java version will automatically install in your system [java version &ldquo;1.6.0_33&rdquo;].</p>
+
+<p><img src="//lh5.googleusercontent.com/-YzWK7ae83Ag/UBbHbF96-CI/AAAAAAAAEIY/hAPxgqN9WRc/s1024/Screen%2520Shot%25202012-07-30%2520at%252010.44.28%2520PM.png" alt="OSX Mountain Lion" /></p>
+
+<p><img src="//lh5.googleusercontent.com/-U81vzGH4Fd0/UBbHKLvizAI/AAAAAAAAEIA/XDov62GUBTA/s1024/Screen%2520Shot%25202012-07-30%2520at%252010.44.02%2520PM.png" alt="OSX Mountain Lion" /></p>
+
+<p><a href="http://netbeans.org/downloads/">NetBeans version 7.2</a> is available now for download. Which is more compatible with Mountain Lion. In order to install applications from other sources, you have to change a ‘security &amp; privacy’ setting from preference.</p>
+
+<p><img src="//lh3.googleusercontent.com/-Y9ipmleYnY8/UBbRek1SRVI/AAAAAAAAEI4/9tfew_VDjkI/s640/Security%2520%2526%2520Privacy-1.jpg" alt="OSX Mountain Lion" /></p>
+
+<p>Happy coding!!</p>
+]]></content>
+  </entry>
+  
+</feed>

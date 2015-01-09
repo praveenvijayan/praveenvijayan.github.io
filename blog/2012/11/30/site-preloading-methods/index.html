@@ -1,0 +1,376 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Site Preloading Methods - Decodize</title>
+  <meta name="author" content="Praveen Vijayan">
+
+  
+  <meta name="description" content="It is a quick post about site preloading. In one of my recent project there was a requirement for site preloading effect. When I googled I got some &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://praveenvijayan.github.io/blog/2012/11/30/site-preloading-methods">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Decodize" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="/javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Decodize</a></h1>
+  
+    <h2>console.log</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="rss" title="subscribe via RSS">RSS</a></li>
+  <li><a href="http://twitter.com/praveen_vijaya" rel="twitter" title="Twitter @praveen_vijaya">Twitter</a></li>
+  <li><a href="https://github.com/praveenvijayan" rel="github" title="Github">Github</a></li>
+  <li><a href="https://facebook.com/praveen.vijayan0" rel="facebook" title="Facebook">Facebook</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="sitesearch" value="praveenvijayan.github.io">
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/about">About</a></li>
+  <li><a href="/projects">Projects</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Site Preloading Methods</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2012-11-30T02:52:00+05:30'><span class='date'><span class='date-month'>Nov</span> <span class='date-day'>30</span><span class='date-suffix'>th</span>, <span class='date-year'>2012</span></span> <span class='time'>2:52 am</span></time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>It is a quick post about site preloading. In one of my recent project there was a requirement for site preloading effect. When I googled I got some jQuery plugin. But some of them are bit heavy and loads the resources twice. I have used <a href="http://www.gayadesign.com/diy/queryloader2-preload-your-images-with-ease/">QueryLoader2</a>. But I noticed increase in page load because of images are loading twice.</p>
+
+<p>1.Using queryloader2 jquery plugin (Size 4.42 MB)</p>
+
+<p><img src="//lh3.googleusercontent.com/-Rw0hpxt70co/ULeX80ncW3I/AAAAAAAAE6g/kIDj6u1zdyI/s640/query-loader1.jpg" alt="Using queryloader2 jquery plugin" /></p>
+
+<!-- more -->
+
+
+<p>2.Normal page loading (Size 2.25 MB)</p>
+
+<p><img src="//lh5.googleusercontent.com/-kEVQjUhZpUQ/ULeX9GwdAbI/AAAAAAAAE6k/lqqa5odlLHo/s640/query-loader2.jpg" alt="Normal page loading" /></p>
+
+<p>The images are requested by the parser and same resource is again requested by the script engine. Following methods can be used to create preloading effect.</p>
+
+<h3>Simple preloader</h3>
+
+<p><strong><em>HTML</em></strong></p>
+
+<pre><code>&lt;body&gt;
+    &lt;!-- Your HTML Code here --&gt;
+    &lt;div id="loader"&gt;&lt;/div&gt;
+&lt;/body&gt;
+</code></pre>
+
+<p><strong><em>CSS</em></strong></p>
+
+<pre><code>#loader{
+    position:fixed;
+    top:0;
+    left:0;
+    bottom:0;
+    right:0;
+    background:#fff url(../images/preloader.gif) 50%;
+}
+</code></pre>
+
+<p><strong><em>JS</em></strong></p>
+
+<pre><code>window.load = function(){ 
+    var loader = document.getElementById('loader'); 
+    loader.style.display = 'none';
+}
+</code></pre>
+
+<h3>Percentage preloader</h3>
+
+<p><strong><em>HTML</em></strong></p>
+
+<pre><code>&lt;script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.8.0/jquery.min.js"&gt;
+&lt;script src="preloader.js"&gt;
+</code></pre>
+
+<p><strong><em>CSS</em></strong></p>
+
+<pre><code>#loaderMask{
+    text-align: center;
+    padding-top: 20%;
+}
+#loaderMask span{
+    font-size: 5em;
+
+}
+</code></pre>
+
+<p><strong><em>JS – preloader.js</em></strong></p>
+
+<pre><code>$(document).ready(function () {
+    "use strict"
+    //indexOf support for IE8 and below. 
+    if (!Array.prototype.indexOf){
+      Array.prototype.indexOf = function(elt /*, from*/){
+        var len = this.length &gt;&gt;&gt; 0;
+
+        var from = Number(arguments[1]) || 0;
+        from = (from &lt; 0)
+             ? Math.ceil(from)
+             : Math.floor(from);
+        if (from &lt; 0)
+          from += len;
+
+        for (; from &lt; len; from++){
+          if (from in this &amp;&amp;
+              this[from] === elt)
+            return from;
+        }
+        return -1;
+      };
+    }
+
+    //bgImg for holding background images in the page &amp; img array for images present in the document(&lt;img src=""&gt;).
+    var bgImg = [], img = [], count=0, percentage = 0;
+
+    //Creating loader holder. 
+    $('&lt;div id="loaderMask"&gt;&lt;span&gt;0%&lt;/span&gt;&lt;/div&gt;').css({
+        position:"fixed",
+        top:0,
+        bottom:0,
+        left:0,
+        right:0,
+        background:'#fff'
+    }).appendTo('body');
+
+    //Using jQuery filter method we parse all elemnts in the page and adds background image url &amp; images src into respective arrays.
+    $('*').filter(function() {
+
+        var val = $(this).css('background-image').replace(/url\(/g,'').replace(/\)/,'').replace(/"/g,'');
+        var imgVal = $(this).not('script').attr('src');
+
+        //Getting urls of background images.
+        if(val !== 'none' &amp;&amp; !/linear-gradient/g.test(val) &amp;&amp; bgImg.indexOf(val) === -1){
+            bgImg.push(val)
+        }
+
+        //Getting src of images in the document.
+        if(imgVal !== undefined &amp;&amp; img.indexOf(imgVal) === -1){
+            img.push(imgVal)
+        }
+
+    });
+
+    //Merging both bg image array &amp; img src array
+    var imgArray = bgImg.concat(img); 
+
+    //Adding events for all the images in the array.
+    $.each(imgArray, function(i,val){ 
+        //Attaching load event 
+        $("&lt;img /&gt;").attr("src", val).bind("load", function () {
+            completeImageLoading();
+        });
+
+        //Attaching error event
+        $("&lt;img /&gt;").attr("src", val).bind("error", function () {
+            imgError(this);
+        });
+    })
+
+    //After each successful image load we will create percentage.
+    function completeImageLoading(){
+        count++;
+        percentage = Math.floor(count / imgArray.length * 100);
+        $('#loaderMask').html('&lt;span&gt;'+percentage + '%'+'&lt;/span&gt;');
+
+        //When percentage is 100 we will remove loader and display page.
+        if(percentage === 100){
+            $('#loaderMask').html('&lt;span&gt;100%&lt;/span&gt;')
+            $('#loaderMask').fadeOut(function(){
+                $('#loaderMask').remove()
+            })
+        }
+    }
+
+    //Error handling - When image fails to load we will remove the mask &amp; shows the page. 
+    function imgError (arg) {
+        $('#loaderMask').html("Image failed to load.. Loader quitting..").delay(3000).fadeOut(1000, function(){
+            $('#loaderMask').remove();
+        })
+    }
+
+});
+</code></pre>
+
+<p><strong><em>Demo</em></strong>
+<a href="http://demos.decodize.com/preloader/">Site preloader demo</a></p>
+
+<p><strong><em>Download</em></strong>
+<a href="http://demos.decodize.com/preloader/Site_preloader.zip">Site preloader source</a></p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Praveen Vijayan</span></span>
+
+      
+
+
+
+
+<time class='entry-date' datetime='2012-11-30T02:52:00+05:30'><span class='date'><span class='date-month'>Nov</span> <span class='date-day'>30</span><span class='date-suffix'>th</span>, <span class='date-year'>2012</span></span> <span class='time'>2:52 am</span></time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/css/'>css</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://praveenvijayan.github.io/blog/2012/11/30/site-preloading-methods/" data-via="praveen_vijaya" data-counturl="http://praveenvijayan.github.io/blog/2012/11/30/site-preloading-methods/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2012/10/23/pixi-tool-create-pixel-perfect-site/" title="Previous Post: PIXI : Tool to create a pixel perfect site.">&laquo; PIXI : Tool to create a pixel perfect site.</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2012/12/30/moving-from-wordpress-to-octopress/" title="Next Post: Moving from Wordpress to Octopress redesign notes">Moving from Wordpress to Octopress redesign notes &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2015/01/09/front-end-d-workflow-redefined-jade/">Front-end Workflow Redefined - Modular Developemnt Using JADE, SCSS & Browserify</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/08/07/front-end-viewpoints-architecture-building-large-websites/">Tooling for Modern Web App Development</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/03/10/linktomob-share-your-links-quickly-and-easily-on-mobile-devices/">Linktomob - Share Your Links Quickly and Easily on Mobile Devices.</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/03/03/getting-started-with-yeoman-1-dot-0-beta-on-windows/">Getting Started With Yeoman 1.0 Beta on Windows</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/02/09/slidemote-universal-remote-control-for-html5-presentations/">Slidemote - Universal Remote Control for Html5 Presentations</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2015 - Praveen Vijayan -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>
