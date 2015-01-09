@@ -2,10 +2,10 @@
 #      Main Configs       #
 # ----------------------- #
 
-url: http://yoursite.com
-title: My Octopress Blog
-subtitle: A blogging framework for hackers.
-author: Your Name
+url: http://praveenvijayan.github.io
+title: Decodize
+subtitle: console.log
+author: Praveen Vijayan
 simple_search: https://www.google.com/search
 description:
 
@@ -63,6 +63,19 @@ default_asides: [asides/recent_posts.html, asides/github.html, asides/delicious.
 #   3rd Party Settings    #
 # ----------------------- #
 
+# My Social Links
+social_twitter: praveen_vijaya
+social_youtube:
+social_delicious: praveenvijayan
+social_stackoverflow:
+social_github: praveenvijayan
+social_flickr: mobflickr
+social_forrst:
+social_google_plus: +praveenvijayannair
+social_facebook: praveen.vijayan0
+social_adobe_exchange:
+social_instagram:
+
 # Github repositories
 github_user:
 github_repo_count: 0
@@ -70,7 +83,7 @@ github_show_profile_link: true
 github_skip_forks: true
 
 # Twitter
-twitter_user:
+twitter_user: praveen_vijaya
 twitter_tweet_button: true
 
 # Google +1
