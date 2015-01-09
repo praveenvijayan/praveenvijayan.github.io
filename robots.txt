@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: 
+
+Sitemap: http://praveenvijayan.github.io/sitemap.xml 
