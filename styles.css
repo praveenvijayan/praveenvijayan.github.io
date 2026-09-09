@@ -9,3 +9,12 @@
 
 .top .wordmark{white-space:nowrap}.case summary{white-space:nowrap}.action:active{transform:translateY(1px)}.contact a:focus-visible{outline-color:var(--color-inverse)}
 @media(max-width:23rem){.top{flex-wrap:wrap;padding-block:1rem}.hero{padding-top:2rem}.hero h1{font-size:2.5rem}}
+
+/* Two-page structure: work (index) and resume */
+.top-nav{display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap}.top-nav>a:not(.action){text-decoration:none;font-weight:600;min-height:44px;display:inline-flex;align-items:center;font-size:1rem}.top-nav>a:not(.action):hover{text-decoration:underline}.top-nav>a[aria-current=page]{color:var(--color-accent);text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:.45em}
+.hero.solo{grid-template-columns:minmax(0,1fr)}.hero.solo .lede{max-width:56ch}.crosslink{font-size:1.05rem;color:var(--color-muted);max-width:60ch}.crosslink a{color:var(--color-ink);font-weight:600}.crosslink a:hover{color:var(--color-accent)}
+.next{display:grid;gap:2rem;align-items:center;padding-block:4rem 6rem;border-top:1px solid var(--color-rule)}.next h2{margin-bottom:.75rem}.next p{margin:0;font-size:var(--text-lg);max-width:48ch}.next .action{justify-self:start}
+.brief{display:grid;gap:2rem;align-items:center;padding-block:3rem 6rem;border-top:1px solid var(--color-rule)}.brief h3{font-size:1.5rem}.brief p{margin:0;max-width:62ch}.brief .action{justify-self:start}
+@media(min-width:48rem){.next{grid-template-columns:minmax(0,1fr) auto;gap:4rem}.next .action{justify-self:end}.brief{grid-template-columns:minmax(0,1.5fr) auto;gap:4rem}.brief .action{justify-self:end}}
+@media(max-width:23rem){.top-nav{gap:1rem}}
+@media print{.top-nav,.crosslink,.next,.brief .action,.portrait figcaption,.contact .links{display:none}.resume .hero{grid-template-columns:minmax(0,1fr) 9rem;gap:2rem;padding-block:0 1.5rem}.resume .portrait{max-width:9rem}.resume .portrait img{filter:none}.resume h1{font-size:2.2rem;margin:.5rem 0}.resume .hero .links{display:none}.resume .brief{padding-block:1rem;border-top:1px solid #999}.resume .case{padding-block:1rem;gap:1rem}.resume .career{gap:2rem;padding-bottom:1rem}.contact{padding-block:1rem}.contact h2{font-size:1.5rem}.contact p{display:none}}
