@@ -3,10 +3,10 @@
 <head>
  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
  <title>Praveen Vijayan | Contact</title>
- <meta name="description" content="Praveen Vijayan, Solution Architect working on AI systems, Dubai. Save the contact or open LinkedIn, Substack, GitHub and the portfolio.">
+ <meta name="description" content="Praveen Vijayan, independent AI Solution Architect, Dubai. Save the contact or open LinkedIn, Substack, GitHub and the portfolio.">
  <meta name="robots" content="noindex">
  <meta name="theme-color" content="#f7f9fc">
- <meta property="og:type" content="profile"><meta property="og:title" content="Praveen Vijayan"><meta property="og:description" content="Solution Architect · AI systems · Dubai, UAE"><meta property="og:url" content="https://praveenvijayan.github.io/card/"><meta property="og:image" content="https://praveenvijayan.github.io/assets/praveen.jpg">
+ <meta property="og:type" content="profile"><meta property="og:title" content="Praveen Vijayan"><meta property="og:description" content="AI Solution Architect · Independent · Dubai, UAE"><meta property="og:url" content="https://praveenvijayan.github.io/card/"><meta property="og:image" content="https://praveenvijayan.github.io/assets/praveen.jpg">
  <link rel="icon" href="../favicon.svg" type="image/svg+xml"><link rel="icon" href="../favicon.png" sizes="32x32" type="image/png"><link rel="apple-touch-icon" href="../apple-touch-icon.png">
  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
@@ -61,7 +61,7 @@
  <section class="card" aria-labelledby="name">
   <img src="../assets/praveen.jpg" width="104" height="104" alt="">
   <h1 id="name">Praveen Vijayan</h1>
-  <p class="title">Solution Architect · AI systems</p>
+  <p class="title">AI Solution Architect · Independent</p>
   <p class="place">Dubai, UAE</p>
   <a class="save" href="praveen-vijayan.vcf" type="text/vcard"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="4"/><path d="M2 21a7 7 0 0 1 14 0M19 8v6M16 11h6"/></svg>Save contact</a>
   <p class="hint" id="hint">Adds name, phone, email, photo and links to your contacts.</p>
@@ -106,7 +106,7 @@
 
  const shareBtn = document.getElementById('share'), url = 'https://praveenvijayan.github.io/card/';
  shareBtn.addEventListener('click', async () => {
-  if (navigator.share) { try { await navigator.share({ title: 'Praveen Vijayan', text: 'Praveen Vijayan, Solution Architect · AI systems', url }); } catch (e) {} return; }
+  if (navigator.share) { try { await navigator.share({ title: 'Praveen Vijayan', text: 'Praveen Vijayan, AI Solution Architect · Independent', url }); } catch (e) {} return; }
   try { await navigator.clipboard.writeText(url); shareBtn.querySelector('span').textContent = 'Link copied'; } catch (e) { prompt('Copy this link', url); }
  });
 
