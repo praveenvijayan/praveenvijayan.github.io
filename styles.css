@@ -56,6 +56,25 @@
 @media print{.jarvis-play-badge,.jarvis-media figcaption,.video-dialog{display:none}}
 
 @media(max-width:40rem){.video-close{top:-3.25rem;right:0}}
+/* Videos: YouTube walkthroughs, loaded on demand into the dialog */
+.videos{background:var(--color-surface);padding-block:5rem}
+.video-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.35rem}
+.video-thumb{position:relative;display:block;aspect-ratio:16/9;overflow:hidden;background:var(--color-dark);border-bottom:1px solid var(--color-rule)}
+.video-thumb img{width:100%;height:100%;object-fit:cover;transition:transform 350ms var(--ease-out),opacity 200ms var(--ease-out)}
+.video-card:hover .video-thumb img{transform:scale(1.018);opacity:.92}
+.video-play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);display:grid;place-items:center;width:58px;height:58px;padding-left:4px;border-radius:999px;background:var(--color-paper);color:var(--color-ink);box-shadow:0 6px 20px rgba(0,0,0,.3);transition:background 180ms var(--ease-out),color 180ms var(--ease-out)}
+.video-thumb:hover .video-play,.video-thumb:focus-visible .video-play{background:var(--color-accent);color:var(--color-accent-ink)}
+.video-card .project-copy .small{margin:0 0 .6rem}
+.video-card .project-copy h3{font-size:1.35rem;letter-spacing:-.02em}
+.video-dialog[data-aspect=wide]{width:min(92vw,calc(84vh * 16 / 9),1100px)}
+.video-dialog[data-aspect=tall]{width:min(92vw,calc(84vh * 9 / 16),540px)}
+.video-dialog .frame{position:relative;width:100%;aspect-ratio:16/9;border-radius:10px;overflow:hidden;background:#000}
+.video-dialog[data-aspect=tall] .frame{aspect-ratio:9/16}
+.video-dialog .frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+@media(max-width:62rem){.video-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:42rem){.video-grid{grid-template-columns:1fr}}
+@media print{.videos{background:none;padding-block:1rem}.video-play{display:none}}
+
 /* Consulting page: engagements, Cal.com booking, process, fit */
 .offers{background:var(--color-surface);padding-block:5rem}.offer-grid{display:grid;gap:1rem}.tile.offer{gap:.35rem;padding:clamp(1.5rem,3vw,2rem)}.tile.offer h3{font-size:1.45rem;margin-bottom:.5rem}.tile.offer>p:not(.small,.case-label){font-size:1.05rem;line-height:1.55}.tile.offer .small{margin-top:auto;padding-top:.75rem}
 .booking{padding-block:6rem 4rem;scroll-margin-top:1rem}.booking-head{display:grid;gap:2rem;margin-bottom:2.5rem}.booking-head p{font-size:var(--text-lg);max-width:46ch;margin:0}
