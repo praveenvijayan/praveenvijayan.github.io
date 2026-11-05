@@ -6,6 +6,8 @@
  <meta name="description" content="Praveen Vijayan, AI Solution Architect, Dubai. Save the contact or open LinkedIn, Substack, GitHub and the portfolio.">
  <meta name="robots" content="noindex">
  <meta name="theme-color" content="#f7f9fc">
+ <link rel="manifest" href="manifest.webmanifest">
+ <meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Praveen"><meta name="apple-mobile-web-app-status-bar-style" content="default">
  <meta property="og:type" content="profile"><meta property="og:title" content="Praveen Vijayan"><meta property="og:description" content="AI Solution Architect · Dubai, UAE"><meta property="og:url" content="https://praveenvijayan.github.io/card/"><meta property="og:image" content="https://praveenvijayan.github.io/assets/praveen.jpg">
  <link rel="icon" href="../favicon.svg" type="image/svg+xml"><link rel="icon" href="../favicon.png" sizes="32x32" type="image/png"><link rel="apple-touch-icon" href="../apple-touch-icon.png">
  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -42,6 +44,8 @@
   .tools button{min-height:48px;border:1px solid var(--color-rule);border-radius:12px;background:var(--color-paper);color:var(--color-ink);font:600 .95rem/1 var(--font-body),system-ui,sans-serif;display:flex;align-items:center;justify-content:center;gap:.5rem;cursor:pointer}
   .tools button:hover{border-color:var(--color-accent);color:var(--color-accent)}
   .tools svg{width:18px;height:18px}
+  .tools button[hidden]{display:none}
+  #install{grid-column:1/-1}
   .foot{text-align:center;font-size:.8rem;color:var(--color-muted);margin:.25rem 0 0}
   a:focus-visible,button:focus-visible{outline:3px solid var(--color-focus);outline-offset:2px}
   dialog{border:0;border-radius:20px;padding:1.25rem;width:min(92vw,24rem);background:#fff;color:var(--color-ink);text-align:center}
@@ -83,6 +87,7 @@
  <div class="tools">
   <button type="button" id="share"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 15V3M8 7l4-4 4 4M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-7"/></svg><span>Share card</span></button>
   <button type="button" id="show-qr"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><path d="M14 14h3v3h-3zM20 14v.01M14 20h.01M17 17h4v4h-4"/></svg>Show QR</button>
+  <button type="button" id="install" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12M8 11l4 4 4-4M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>Add to home screen</button>
  </div>
  <p class="foot">praveenvijayan.github.io/card</p>
 </main>
@@ -132,6 +137,14 @@
  dlg.addEventListener('click', e => { if (e.target === dlg) dlg.close(); });
  new Image().src = modes.offline[0];
  if (location.hash === '#qr') open();
+
+ // PWA: offline shell + install button (Chromium fires beforeinstallprompt; iOS uses Share > Add to Home Screen).
+ if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js').catch(() => {});
+ const installBtn = document.getElementById('install');
+ let installEvt = null;
+ window.addEventListener('beforeinstallprompt', e => { e.preventDefault(); installEvt = e; installBtn.hidden = false; });
+ installBtn.addEventListener('click', async () => { if (!installEvt) return; installEvt.prompt(); await installEvt.userChoice; installEvt = null; installBtn.hidden = true; });
+ window.addEventListener('appinstalled', () => { installBtn.hidden = true; });
 })();
 </script>
 </body>

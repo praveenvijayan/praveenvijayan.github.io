@@ -1,0 +1,21 @@
+{
+  "name": "Praveen Vijayan",
+  "short_name": "Praveen",
+  "description": "Contact card for Praveen Vijayan, AI Solution Architect, Dubai. Save the contact, call, WhatsApp, email, open links or show a QR code.",
+  "id": "/card/",
+  "start_url": "/card/",
+  "scope": "/card/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "lang": "en",
+  "background_color": "#f7f9fc",
+  "theme_color": "#f7f9fc",
+  "icons": [
+    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "icon-512-maskable.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ],
+  "shortcuts": [
+    { "name": "Show QR", "short_name": "QR", "url": "/card/#qr", "icons": [{ "src": "icon-192.png", "sizes": "192x192", "type": "image/png" }] }
+  ]
+}
